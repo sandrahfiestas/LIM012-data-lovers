@@ -1,6 +1,11 @@
+body {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    min-height: 100vh;
+}
 header h1{
     text-align: center;
-    /* position: absolute; */
     width: 411px;
     height: 66px;
     margin: 30px auto;
@@ -13,8 +18,8 @@ header h1{
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 .navegador{
-    position: absolute;
-    width: 1140px;
+    display: block;
+    width: 100%;
     height: 40px;
     background: #D64045;
     mix-blend-mode: normal;
@@ -26,8 +31,8 @@ header h1{
     list-style-type: none;
 }
 .navegador li a{
-    position: absolute;
-    width: 100%;
+    display: inline-flex;
+  /*  width: 100%;*/
     font-family: Oswald;
     text-decoration: none;
     font-weight: normal;
@@ -39,13 +44,13 @@ header h1{
 h1{
     /* ¿Cuáles son los deportistas 
     con más medallas olímpicas? */
-    position: relative;
-    width: 640px;
-    height: 46px;
+    display: flex;
+    width: 25%;
+    height: 25%; 
     font-family: Oswald;
     font-style: normal;
     font-weight: normal;
-    font-size: 48px;
+    font-size: 36px;
     /* line-height: 8em;     or 67% */
     color: #1D3354;
 }
@@ -54,16 +59,22 @@ h1{
     /* position: relative;
     height: 20%; */
 }
-
+/* .table-content{
+    flex-direction: column;
+} */
 
 table {
+    display: flex;
+    flex-direction: column;
     border-bottom: 1px solid #C4C4C4;
     margin: auto;
-    width: 50%;
+    width: 70%;
 }
+
+/*
 table th{
     margin: auto;
-    padding: 3%;
+    padding: 35%;
     font-size: 36px;
     width: auto;
 }
@@ -72,11 +83,11 @@ td{
     text-align: center;
     padding: 2%;
     font-size: 24px;
-}
+}*/
 
 footer{
-    position: absolute;
-    width: 1140px;
+    display: block;
+    width: 100%;
     height: 52px;
     background: rgba(51, 54, 59, 0.82);
 }

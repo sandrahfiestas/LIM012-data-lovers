@@ -1,6 +1,6 @@
-import { example } from './data.js';
-// import data from './data/atletas/atletas.js';
-// import data from './data/lol/lol.js';
-import data from './data/pokemon/pokemon.js';
+// import { example } from './data.js';
+import data from './data/atletas/atletas.js';
 
-console.log(example, data);
+const olympic = data;
+document.getElementsByTagName('td').innerHTML = olympic.atletas[0].name;
+console.log(olympic.atletas[0].name);
