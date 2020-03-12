@@ -1,3 +1,96 @@
+header h1{
+    text-align: center;
+    /* position: absolute; */
+    width: 411px;
+    height: 66px;
+    margin: 30px auto;
+    font-family: Viga;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 48px;
+    color: #1D3354;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.navegador{
+    position: absolute;
+    width: 1140px;
+    height: 40px;
+    background: #D64045;
+    mix-blend-mode: normal;
+    border: 1px solid #D64045;
+    box-sizing: border-box;
+    margin: auto;
+}
+.navegador li{
+    list-style-type: none;
+}
+.navegador li a{
+    position: absolute;
+    width: 100%;
+    font-family: Oswald;
+    text-decoration: none;
+    font-weight: normal;
+    font-size: 24px;
+    margin: -13px auto;
+    text-align: center;
+    color: #E9FFF9;
+}
+h1{
+    /* ¿Cuáles son los deportistas 
+    con más medallas olímpicas? */
+    position: relative;
+    width: 640px;
+    height: 46px;
+    font-family: Oswald;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 48px;
+    /* line-height: 8em;     or 67% */
+    color: #1D3354;
+}
+#AtletasOlimpicos{
+    margin: 5em 2em;
+    /* position: relative;
+    height: 20%; */
+}
+
+
+table {
+    border-bottom: 1px solid #C4C4C4;
+    margin: auto;
+    width: 50%;
+}
+table th{
+    margin: auto;
+    padding: 3%;
+    font-size: 36px;
+    width: auto;
+}
+td{
+    width: 25%;
+    text-align: center;
+    padding: 2%;
+    font-size: 24px;
+}
+
+footer{
+    position: absolute;
+    width: 1140px;
+    height: 52px;
+    background: rgba(51, 54, 59, 0.82);
+}
+footer p{
+    /* position: relative; */
+    width: 100%;
+    font-family: Oswald;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 10px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
 
 /* td {
     border: 2px solid #8c6b48;
