@@ -54,8 +54,9 @@ h1{
     /* line-height: 8em;     or 67% */
     color: #1D3354;
 }
-#AtletasOlimpicos{
+#miraMasDeAtletas{
     margin: 5em 2em;
+    /* visibility: hidden; */
     /* position: relative;
     height: 20%; */
 }
@@ -66,24 +67,20 @@ h1{
 table {
     display: flex;
     flex-direction: column;
-    border-bottom: 1px solid #C4C4C4;
     margin: auto;
     width: 70%;
 }
 
-/*
-table th{
-    margin: auto;
-    padding: 35%;
-    font-size: 36px;
-    width: auto;
-}
+
 td{
-    width: 25%;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid #C4C4C4;
+    width: 100%;
+    text-align: left;
     padding: 2%;
     font-size: 24px;
-}*/
+}
 
 footer{
     display: block;
