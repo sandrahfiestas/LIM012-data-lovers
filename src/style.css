@@ -126,12 +126,16 @@ footer p{
   box-sizing: border-box;
 }
 
+.hideWindow{
+  display: none;
+}
+
 h1{
   text-align: center;
   color: #333;
 }
 
-.table-container{
+div.table-container{
   background: #f2f2f2;
   width: 60%;
   margin-left: auto;
