@@ -15,13 +15,14 @@ const dropDownList = `
   <select class="olympicsDropdownList">
     ${createOption}
   </select>
-  <p class="counter">total de atletas ${data.atletas.length}</p>
+  <p class="counter">Resultado total de atletas ${data.atletas.length}</p>
+  <p>${data.atletas[10]}</p>
   </div>
 `;
 
-
 // tabla de atletas nombres y deportes
 const markupTable = `
+<div>
 <h1 class="title">ATLETAS OLIMPICOS</h1>
 ${dropDownList}
 <table class="tableContent">
@@ -32,8 +33,10 @@ ${dropDownList}
     ${data.atletas.map(atletasNames).join('')}
     </body>    
   </table>
+  </div>
 `;
 
 // DOM
+
 document.getElementById('byName').innerHTML = markupTable;
-document.getElementsByClassName('title').innerHTML = dropDownList;
+document.getElementsByClassName('olympicsDropdownList').innerHTML = dropDownList;

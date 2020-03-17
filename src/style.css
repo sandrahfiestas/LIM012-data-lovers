@@ -42,8 +42,7 @@ header h1{
     color: #E9FFF9;
 }
 .title{
-    /* ¿Cuáles son los deportistas 
-    con más medallas olímpicas? */
+    
     display: flex;
     width: 25%;
     height: 25%; 
@@ -53,32 +52,28 @@ header h1{
     font-size: 36px;
     /* line-height: 8em;     or 67% */
     color: #1D3354;
-}
-#miraMasDeAtletas{
+} 
+
+#atle{
     margin: 5em 2em;
+
     /* visibility: hidden; */
     /* position: relative;
     height: 20%; */
 }
 .counterAndList{
     position: relative;
-    margin-left: 70%;
+    margin-left: 60%;
     margin-right: auto;
 }
 .counterAndList p{ 
-    /* text-align: right; */
     color: silver;
+    font-size: small;
 }
 .counterAndList select{
     width: 80%;
 }
-/* .olympicsDropdownList{
 
-}
-.counter{
-    text-align: right;
-    color: silver;
-} */
 .tableContent{
     width: 75%;
     margin: auto;
@@ -90,7 +85,7 @@ td{
     padding: 2%;
     width: 100%;
 }
-tr:hover {background-color: #f5f5f5;}
+td:hover {background-color: #f5f5f5;}
 
 .tableLeft{
     display: inline;
