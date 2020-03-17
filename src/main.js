@@ -4,7 +4,6 @@ import data from './data/atletas/atletas.js';
 // import markupTable from './data.js';
 
 
-// data.js
 const atletasNames = names => `<tr><td>${names.name} <span class="tableLeft">${names.sport}</span></td></tr>`;
 const createOption = () => ` <option value="default">default</option> 
 `;
