@@ -18,31 +18,40 @@ header h1{
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 .navegador{
-    display: block;
+    display: flex;
     width: 100%;
-    height: 40px;
+    height: 60px;
     background: #D64045;
     mix-blend-mode: normal;
     border: 1px solid #D64045;
     box-sizing: border-box;
     margin: auto;
+    flex-wrap: wrap;
 }
+.navegador ul{
+    display: flex;
+    flex-wrap: wrap;
+}
+
 .navegador li{
     list-style-type: none;
+    /* line-height: 60px; */
+    width: 50%;
 }
 .navegador li a{
-    display: inline-flex;
-  /*  width: 100%;*/
+    display: block;
+    height: 100%;
+    padding: 0 10%;
     font-family: Oswald;
-    text-decoration: none;
     font-weight: normal;
     font-size: 24px;
-    margin: -13px auto;
     text-align: center;
     color: #E9FFF9;
+    text-transform: uppercase;
+    text-decoration: none;
+
 }
-.title{
-    
+.title{   
     display: flex;
     width: 25%;
     height: 25%; 
@@ -53,18 +62,28 @@ header h1{
     /* line-height: 8em;     or 67% */
     color: #1D3354;
 } 
-
-#atle{
-    margin: 5em 2em;
-
-    /* visibility: hidden; */
+/* 
+#byName{
+    border: 1px solid black;
     /* position: relative;
-    height: 20%; */
+    height: 20%; 
+} 
+*/
+.negro {
+    background-color: black;
 }
+  
+.hideData {
+    display: none;
+}
+.centrado{
+    text-align: center;
+    }
 .counterAndList{
     position: relative;
     margin-left: 60%;
     margin-right: auto;
+    display: none;
 }
 .counterAndList p{ 
     color: silver;
@@ -77,9 +96,11 @@ header h1{
 .tableContent{
     width: 75%;
     margin: auto;
+    margin-bottom: 4%;
 }
 
-td{
+td{ 
+    /* display: none; */
     border-bottom: 1px solid rgb(189, 188, 188);
     display: inline-flex;
     padding: 2%;
@@ -92,12 +113,26 @@ td:hover {background-color: #f5f5f5;}
     margin-left: auto;
     margin-right: 0;
 }
+
 .tableTitleLeft{
     padding-left: 35%;
     padding-right: 0;
 }
 th{
     padding: 5%;
+}
+
+#myBtn{
+    background: #D64045;
+    border: 1px solid #D64045;
+    font-family: Oswald;
+    font-size: 32px;
+    text-align: center;
+    color: #E9FFF9;
+    margin: 2% 46%;
+    position: relative;
+    width: max-content;
+
 }
 
 footer{
@@ -119,18 +154,18 @@ footer p{
 
 *{
     box-sizing: border-box;
-  }
+}
   
-  .hideWindow{
+.hideWindow{
     display: none;
-  }
-  
-  h1{
+}
+
+h1{
     text-align: center;
     color: #333;
-  }
-  
-  div.table-container{
+}
+
+div.table-container{
     background: #f2f2f2;
     width: 60%;
     margin-left: auto;
@@ -141,22 +176,22 @@ footer p{
     box-shadow: 0 0 0 10px #fff,
                 0 0 0 11px #fff,
                 0 20px 20px -12px #000;
-  
-  }
-  
-  
-  .table-profile{
+
+}
+
+
+.table-profile{
     border: 1px solid rgba(181,213,144,0.5);
-  
-  }
-  
-  .table-profile th{
+
+}
+
+.table-profile th{
     /* color: rgb(41, 10, 10); */
     /* font-weight: normal; */
     text-align: left;
-  }
-  
-  .table-detail{
+}
+
+.table-detail{
     font-size: .85em;
     border: 1px solid rgba(181,213,144,0.5);
     color: #666;
@@ -164,20 +199,20 @@ footer p{
     /* margin-left:auto;
     margin-right: auto; */
     /* margin: auto; */
-  }
-  
-  .table-detail td, .table-detail th{
+}
+
+.table-detail td, .table-detail th{
     padding: .8em;
     border-bottom: 1px solid rgba(181, 213, 144, 0.5);
-  }
-  
-  .table-detail th{
+}
+
+.table-detail th{
     background: rgb(201, 80, 86);
     color: #fff;
     font-weight: normal;
     text-align: right;
-  }
-  
-  .table-detail td{
+}
+
+.table-detail td{
     text-align: center;
-  }
+}
