@@ -1,9 +1,24 @@
-body {
-    /* display: flex;
-    flex-direction: column; */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+.logoContainer{
+  /* Flexbox */
+	display:flex;
+	flex-flow:row wrap;  
+}
+body{
+    display: flex;
+    flex-direction: column;
     margin: 0;
     min-height: 100vh;
 }
+
+.content {
+    flex: 1;
+}
+
 header h1{
     text-align: center;
     width: 411px;
@@ -17,6 +32,16 @@ header h1{
     color: #1D3354;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
+.logoImg{
+    width: 220px;
+    height: 150px;
+}
+.rioLogo{
+    width: 226px;
+    height: 175px;
+    padding-right: 3%;
+}
+
 .navegador{
     display: flex;
     width: 100%;
@@ -27,10 +52,12 @@ header h1{
     box-sizing: border-box;
     margin: auto;
     flex-wrap: wrap;
+    align-items:center;
 }
 .navegador ul{
     display: flex;
     flex-wrap: wrap;
+    width: 100%;
 }
 
 .navegador li{
@@ -39,8 +66,9 @@ header h1{
     width: 50%;
 }
 .navegador li a{
-    display: block;
+    display: inline-flex;
     height: 100%;
+    width: 100%;
     padding: 0 10%;
     font-family: Oswald;
     font-weight: normal;
@@ -49,26 +77,65 @@ header h1{
     color: #E9FFF9;
     text-transform: uppercase;
     text-decoration: none;
-
+    /* text-align: center; */
+}
+header nav a:hover {
+    background:#FFFFFF;
+    color: #D64045;
 }
 .title{   
     display: flex;
-    width: 25%;
+    width: 80%;
     height: 25%; 
     font-family: Oswald;
     font-style: normal;
     font-weight: normal;
-    font-size: 36px;
+    font-size: 2em;
     /* line-height: 8em;     or 67% */
     color: #1D3354;
+    padding: 3% 1%;
+    /* margin-top: 3%; */
 } 
-/* 
-#byName{
+.medallasLogo{
+    /* Flexbox */
+	display: flex;
+    flex-wrap:wrap;
+    justify-content: space-between;
+}
+.topMedallistas{
+    display: flex;
+    justify-content: space-around;
+}
+.topMedallistas figure{
+    width: 282px;
+    height: 354px;
+    box-shadow: 0 15px 25px rgba(0,0,0,0.3);
+}
+.topMedallistas figure figcaption{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+}
+.topMedallistas figure img{
+    width: 282px;
+    height: 354px;
     border: 1px solid black;
-    /* position: relative;
-    height: 20%; 
-} 
-*/
+}
+.relieve:hover{
+    transform: scale(1.1);
+    transition: 0.5;
+}
+.Deportes{
+    margin: 3%;
+}
+
+#byName{
+    /* background-color: blanchedalmond; */
+    text-align: center;
+    width: 100%;
+}
+.appearance{
+    width: 60%;
+}
 .negro {
     background-color: black;
 }
@@ -78,12 +145,12 @@ header h1{
 }
 .centrado{
     text-align: center;
-    }
+}
+
 .counterAndList{
-    position: relative;
+    /* position: relative; */
     margin-left: 60%;
     margin-right: auto;
-    display: none;
 }
 .counterAndList p{ 
     color: silver;
@@ -134,12 +201,24 @@ th{
     width: max-content;
 
 }
+button {
+    cursor: pointer;
+    border: 1px inset rgb(0, 0, 0);
+    font-size: 13px;
+    color: #FFFFFF;
+    padding: 0.5em 1em;
+    font-family: 'Lora', serif;
+    background: #D64045;
+    box-sizing: border-box;
+    border-radius: 18px;
+}
 
 footer{
     display: block;
     width: 100%;
     height: 52px;
     background: rgba(51, 54, 59, 0.82);
+    margin-top: 3%;    
 }
 footer p{
     /* position: relative;*/ 
