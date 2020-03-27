@@ -239,12 +239,17 @@ footer p{
     display: none;
 }
 
+.hideWindow{
+  display: none;
+}
+
 h1{
     text-align: center;
     color: #333;
 }
 
 div.table-container{
+
     background: #f2f2f2;
     width: 60%;
     margin-left: auto;
