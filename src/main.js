@@ -62,36 +62,16 @@ const yearList = (ele) => {
 // data.atletas.map(yearList);
 */
 
-const atletasNames = (element, index) => {
-  let elementos = '';
-  if (index < 6000) {
-    if (element.disciplinas[0]['año'] === 2012) {
-      elementos = `<tr class=""><td>${element.name}
-    <span class="tableLeft">${element.disciplinas[0]['ciudad']}
-    ${element.disciplinas[0]['año']}</span></td></tr>`;
-    }
-  }
-  return elementos;
-};
+
+const h1Element = document.createElement('h1');
+const divElement = document.createElement('div');
+h1Element.classList.add('title');
+h1Element.textContent = 'ATLETAS OLIMPICOS';
+divElement.classList.add('counterAndList');
+const divTable = document.createElement('div');
 
 // tabla de nombres de atletas ${createOption(data.atletas)}
 const markupTable = `
-<h1 class="title">ATLETAS OLIMPICOS</h1>
-<div class ="counterAndList">
-  <select name="year" id="year">
-  <option value="Rio de Janeiro 2016">Rio de Janeiro 2016</option>  
-  <option value="Sochi 2014">Sochi 2014</option>
-  <option value="London 2012">London 2012</option>
-  <option value="Vancouver 2010">Vancouver 2010</option>
-  <option value="Beijing 2008">Beijing 2008</option>
-  <option value="Torino 2006">Torino 2006</option>
-  <option value="Athina 2004">Athina 2004</option>
-  <option value="Salt Lake City 2002">Salt Lake City 2002</option>
-  <option value="Sydney 2000">Sydney 2000</option>
-  </select id="olimpiadas">
-  <p class="counter">Total de atletas ${data.atletas.length}</p>
-</div>
-<div>
 <table id="atletasTb" class="tableContent">
     <thead>
       <th>Nombre <span class="tableTitleLeft"></span></th>
@@ -101,11 +81,42 @@ const markupTable = `
     ${data.atletas.map(atletasNames).join('')}
     </tbody>
 </table>
-</div>
 `;
+const select = `
+<select name="year" id="year">
+  <option value="Rio de Janeiro 2016">Rio de Janeiro 2016</option>  
+  <option value="Sochi 2014">Sochi 2014</option>
+  <option value="London 2012">London 2012</option>
+  <option value="2010">Vancouver 2010</option>
+  <option value="2008">Beijing 2008</option>
+  <option value="2006">Torino 2006</option>
+  <option value="2004">Athina 2004</option>
+  <option value="2002">Salt Lake City 2002</option>
+  <option value="2000">Sydney 2000</option>
+  </select id="olimpiadas">
+  <p class="counter">Total de atletas ${data.atletas.length}</p>
+`;
+divElement.innerHTML = select;
+divTable.innerHTML = markupTable;
+divElement.querySelector('#year').addEventListener('change', (event) => {
+  // const año = event.target.value;
+  data.atletas.map((element, index) => {
+    let elementos = '';
+    if (index < 6000) {
+      if (element.disciplinas[0]['año'] === event.target.value) {
+        elementos = `<tr class=""><td>${element.name}
+      <span class="tableLeft">${element.disciplinas[0]['ciudad']}
+      ${element.disciplinas[0]['año']}</span></td></tr>`;
+      }
+    }
+    return elementos;
+  }).join('');
+  // console.log();
+});
 // tabla de atletas
-document.getElementById('byName').innerHTML = markupTable;
-
+document.getElementById('byName').appendChild(h1Element);
+document.getElementById('byName').appendChild(divElement);
+document.getElementById('byName').appendChild(divTable);
 
 // muestra una lista de atletas y las olimpiadas 2016
 // const atletasNames = (element, index) => {
