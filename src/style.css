@@ -1,18 +1,18 @@
-* {
+*{
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-}
-.logoContainer{
-  /* Flexbox */
-	display:flex;
-	flex-flow:row wrap;  
 }
 body{
     display: flex;
     flex-direction: column;
     margin: 0;
     min-height: 100vh;
+}
+.logoContainer{
+    /* Flexbox */
+    display:flex;
+    flex-flow:row wrap;  
 }
 
 .content {
@@ -21,6 +21,7 @@ body{
 
 header h1{
     text-align: center;
+    /* border: 1px solid black; */
     width: 411px;
     height: 66px;
     margin: 30px auto;
@@ -300,3 +301,45 @@ div.table-container{
 .table-detail td{
     text-align: center;
 }
+
+@media (min-width: 360px) and (max-width: 768px) {
+    body{
+      background: aliceblue;
+    }
+    .logoImg{
+        width: 100px;
+        height: 80px;
+    }
+    header h1{
+        font-size: 26px;
+        margin-bottom: 0;
+    }
+
+    .rioLogo{
+        width: 226px;
+        height: 175px;
+        padding-right: 3%;
+    }
+
+    /* section{
+      width: 48%;
+    } */
+  }
+ 
+  /* @media (min-width: 768px) {
+    body{
+      background: red;
+    }
+    section{
+      width: 31.33%;
+    }
+  } */
+  
+  /* @media (min-width: 1200px) {
+    body{
+      background: yellow;
+    }
+    section{
+      width: 23%;
+    }
+  } */
