@@ -3,9 +3,9 @@ import data from './data/atletas/atletas.js';
 // export const example = () => 'example';
 // export const anotherExample = () => 'OMG';
 
-export const namesAndOlimpicList = (a) => {
+// export const namesAndOlimpicList = (a) => {
 
-  console.log(a);
-};
+//   console.log(a);
+// };
 
 export default data.js;
