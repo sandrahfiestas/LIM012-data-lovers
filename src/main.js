@@ -1,4 +1,4 @@
-// import { namesAndOlimpicList } from './data.js';
+import { filterAtletasForYear } from './data.js';
 import data from './data/atletas/atletas.js';
 // import atletas from './data/atletas/atletas.js';
 
@@ -30,25 +30,6 @@ btnByName.addEventListener('click', () => {
 // });
 
 const arrDataAtletas = data.atletas;
-// console.log(dataAtletas);
-
-const filterAtletasForYear = (arr, num) => {
-  const newArr = [];
-  for (let i = 0; i < arr.length; i++) {
-    // console.log(arrDataAtletas[i].disciplinas);
-    if (arr[i].hasOwnProperty('disciplinas')) {
-      const arrayDisciplinas = arr[i].disciplinas;
-      for (let j = 0; j < arrayDisciplinas.length; j++) {
-        if (arrayDisciplinas[j]['año'] === num) {
-          newArr.push(arr[i]);
-        }
-      }
-    }
-  }
-  return newArr;
-};
-// console.log(filterAtletasForYear(arrDataAtletas, 2016));
-
 
 const h1Element = document.createElement('h1');
 const divElement = document.createElement('div');
