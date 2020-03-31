@@ -29,6 +29,27 @@ btnByName.addEventListener('click', () => {
 //   document.getElementById('masAtletas').classList.remove('hideData');
 // });
 
+const arrDataAtletas = data.atletas;
+// console.log(dataAtletas);
+
+const filterAtletasForYear = (arr, num) => {
+  const newArr = [];
+  for (let i = 0; i < arr.length; i++) {
+    // console.log(arrDataAtletas[i].disciplinas);
+    if (arr[i].hasOwnProperty('disciplinas')) {
+      const arrayDisciplinas = arr[i].disciplinas;
+      for (let j = 0; j < arrayDisciplinas.length; j++) {
+        if (arrayDisciplinas[j]['año'] === num) {
+          newArr.push(arr[i]);
+        }
+      }
+    }
+  }
+  return newArr;
+};
+// console.log(filterAtletasForYear(arrDataAtletas, 2016));
+
+
 const h1Element = document.createElement('h1');
 const divElement = document.createElement('div');
 h1Element.classList.add('title');
@@ -43,7 +64,7 @@ const markupTable = `
       <th>Nombre <span class="tableTitleLeft"></span></th>
       <th> Olimpiada <span class="tableTitleLeft"></span></th>
     </thead>
-    <tbody id="atletasRow">
+    <tbody id="pintarData">
     </tbody>
 </table>
 `;
@@ -67,9 +88,16 @@ divElement.innerHTML = select;
 divTable.innerHTML = markupTable;
 
 divElement.querySelector('#year').addEventListener('change', (event) => {
-  const año = event.target.value;
-
-  console.log(año);
+  const selectedYear = parseInt(event.target.value);
+  const filteredData = filterAtletasForYear(arrDataAtletas, selectedYear);
+  let stringTemplate = '';
+  for (let i = 0; i < filteredData.length; i++) {
+    stringTemplate += `<tr>
+                        <td>${filteredData[i].name}<span> ${filteredData[i].sport}</span</td>
+                      </tr>`;
+  }
+  divTable.querySelector('#pintarData').innerHTML = stringTemplate;
+  console.log(stringTemplate);
 });
 
 
