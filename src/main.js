@@ -2,6 +2,7 @@ import { filterAtletasForYear } from './data.js';
 import data from './data/atletas/atletas.js';
 // import atletas from './data/atletas/atletas.js';
 
+const arrDataAtletas = data.atletas;
 // Definicion de variables
 const containerMain = document.getElementById('containerMain');
 containerMain.classList.remove('hideData');
@@ -19,9 +20,9 @@ btnByName.addEventListener('click', () => {
   containerMain.classList.add('hideData');
   byName.classList.remove('hideData');
   // dVerMas.classList.remove('hideData');
-  /* Neliada llama funcion
-  const listFuncion = list(data.atletas);
-  document.getElementById('atletasRow').innerHTML = listFuncion; */
+  //  Neliada llama funcion
+  // const filterAtletasForFunction = filterAtletasForYear(arrDataAtletas, 2016);
+  // document.getElementById('atletasRow').innerHTML = filterAtletasForFunction;
 });
 
 // botón "Ver más atletas" SiFunciona
@@ -29,7 +30,6 @@ btnByName.addEventListener('click', () => {
 //   document.getElementById('masAtletas').classList.remove('hideData');
 // });
 
-const arrDataAtletas = data.atletas;
 
 const h1Element = document.createElement('h1');
 const divElement = document.createElement('div');
@@ -42,8 +42,8 @@ const divTable = document.createElement('div');
 const markupTable = `
 <table id="atletasTb" class="tableContent">
     <thead>
-      <th>Nombre <span class="tableTitleLeft"></span></th>
-      <th> Olimpiada <span class="tableTitleLeft"></span></th>
+      <th>Nombre</th>
+      <th> Olimpiada</span></th>
     </thead>
     <tbody id="pintarData">
     </tbody>
@@ -72,13 +72,12 @@ divElement.querySelector('#year').addEventListener('change', (event) => {
   const selectedYear = parseInt(event.target.value);
   const filteredData = filterAtletasForYear(arrDataAtletas, selectedYear);
   let stringTemplate = '';
-  for (let i = 0; i < filteredData.length; i++) {
+  for (let i = 0; i < filteredData.length; i += 1) {
     stringTemplate += `<tr>
-                        <td>${filteredData[i].name}<span> ${filteredData[i].sport}</span</td>
+                        <td>${filteredData[i].name}<span>${filteredData[i].sport}</span</td>
                       </tr>`;
   }
   divTable.querySelector('#pintarData').innerHTML = stringTemplate;
-  console.log(stringTemplate);
 });
 
 
