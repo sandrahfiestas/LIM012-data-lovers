@@ -1,11 +1,27 @@
-body {
-    /* display: flex;
-    flex-direction: column; */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body{
+    display: flex;
+    flex-direction: column;
     margin: 0;
     min-height: 100vh;
 }
+.logoContainer{
+    /* Flexbox */
+    display:flex;
+    flex-flow:row wrap;  
+}
+
+.content {
+    flex: 1;
+}
+
 header h1{
     text-align: center;
+    /* border: 1px solid black; */
     width: 411px;
     height: 66px;
     margin: 30px auto;
@@ -17,52 +33,123 @@ header h1{
     color: #1D3354;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
+.logoImg{
+    width: 220px;
+    height: 150px;
+}
+.rioLogo{
+    width: 226px;
+    height: 175px;
+    padding-right: 3%;
+}
+
 .navegador{
-    display: block;
+    display: flex;
     width: 100%;
-    height: 40px;
+    height: 60px;
     background: #D64045;
     mix-blend-mode: normal;
     border: 1px solid #D64045;
     box-sizing: border-box;
     margin: auto;
+    flex-wrap: wrap;
+    align-items:center;
 }
+.navegador ul{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
 .navegador li{
     list-style-type: none;
+    /* line-height: 60px; */
+    width: 50%;
 }
 .navegador li a{
     display: inline-flex;
-  /*  width: 100%;*/
+    height: 100%;
+    width: 100%;
+    padding: 0 10%;
     font-family: Oswald;
-    text-decoration: none;
     font-weight: normal;
     font-size: 24px;
-    margin: -13px auto;
     text-align: center;
     color: #E9FFF9;
+    text-transform: uppercase;
+    text-decoration: none;
+    /* text-align: center; */
 }
-.title{
-    
+header nav a:hover {
+    background:#FFFFFF;
+    color: #D64045;
+}
+.title{   
     display: flex;
-    width: 25%;
+    width: 80%;
     height: 25%; 
     font-family: Oswald;
     font-style: normal;
     font-weight: normal;
-    font-size: 36px;
+    font-size: 2em;
     /* line-height: 8em;     or 67% */
     color: #1D3354;
+    padding: 3% 1%;
+    /* margin-top: 3%; */
 } 
-
-#atle{
-    margin: 5em 2em;
-
-    /* visibility: hidden; */
-    /* position: relative;
-    height: 20%; */
+.medallasLogo{
+    /* Flexbox */
+	display: flex;
+    flex-wrap:wrap;
+    justify-content: space-between;
 }
+.topMedallistas{
+    display: flex;
+    justify-content: space-around;
+}
+.topMedallistas figure{
+    width: 282px;
+    height: 354px;
+    box-shadow: 0 15px 25px rgba(0,0,0,0.3);
+}
+.topMedallistas figure figcaption{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+}
+.topMedallistas figure img{
+    width: 282px;
+    height: 354px;
+    border: 1px solid black;
+}
+.relieve:hover{
+    transform: scale(1.1);
+    transition: 0.5;
+}
+.Deportes{
+    margin: 3%;
+}
+
+#byName{
+    /* background-color: blanchedalmond; */
+    text-align: center;
+    width: 100%;
+}
+.appearance{
+    width: 60%;
+}
+.negro {
+    background-color: black;
+}
+  
+.hideData {
+    display: none;
+}
+.centrado{
+    text-align: center;
+}
+
 .counterAndList{
-    position: relative;
+    /* position: relative; */
     margin-left: 60%;
     margin-right: auto;
 }
@@ -77,9 +164,11 @@ header h1{
 .tableContent{
     width: 75%;
     margin: auto;
+    margin-bottom: 4%;
 }
 
-td{
+td{ 
+    /* display: none; */
     border-bottom: 1px solid rgb(189, 188, 188);
     display: inline-flex;
     padding: 2%;
@@ -92,6 +181,7 @@ td:hover {background-color: #f5f5f5;}
     margin-left: auto;
     margin-right: 0;
 }
+
 .tableTitleLeft{
     padding-left: 35%;
     padding-right: 0;
@@ -100,11 +190,36 @@ th{
     padding: 5%;
 }
 
+#myBtn{
+    background: #D64045;
+    border: 1px solid #D64045;
+    font-family: Oswald;
+    font-size: 32px;
+    text-align: center;
+    color: #E9FFF9;
+    margin: 2% 46%;
+    position: relative;
+    width: max-content;
+
+}
+button {
+    cursor: pointer;
+    border: 1px inset rgb(0, 0, 0);
+    font-size: 13px;
+    color: #FFFFFF;
+    padding: 0.5em 1em;
+    font-family: 'Lora', serif;
+    background: #D64045;
+    box-sizing: border-box;
+    border-radius: 18px;
+}
+
 footer{
     display: block;
     width: 100%;
     height: 52px;
     background: rgba(51, 54, 59, 0.82);
+    margin-top: 3%;    
 }
 footer p{
     /* position: relative;*/ 
@@ -118,7 +233,11 @@ footer p{
 }
 
 *{
-  box-sizing: border-box;
+    box-sizing: border-box;
+}
+  
+.hideWindow{
+    display: none;
 }
 
 .hideWindow{
@@ -126,59 +245,104 @@ footer p{
 }
 
 h1{
-  text-align: center;
-  color: #333;
+    text-align: center;
+    color: #333;
 }
 
 div.table-container{
-  background: #f2f2f2;
-  width: 60%;
-  margin-left: auto;
-  margin-right: auto;
-  display: flex;
-  flex-direction: column;
-  /* justify-content: center; */
-  box-shadow: 0 0 0 10px #fff,
-              0 0 0 11px #fff,
-              0 20px 20px -12px #000;
+
+    background: #f2f2f2;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    box-shadow: 0 0 0 10px #fff,
+                0 0 0 11px #fff,
+                0 20px 20px -12px #000;
 
 }
 
 
 .table-profile{
-  border: 1px solid rgba(181,213,144,0.5);
+    border: 1px solid rgba(181,213,144,0.5);
 
 }
 
 .table-profile th{
-  /* color: rgb(41, 10, 10); */
-  /* font-weight: normal; */
-  text-align: left;
+    /* color: rgb(41, 10, 10); */
+    /* font-weight: normal; */
+    text-align: left;
 }
 
 .table-detail{
-  font-size: .85em;
-  border: 1px solid rgba(181,213,144,0.5);
-  color: #666;
-  border-collapse: collapse;
-  /* margin-left:auto;
-  margin-right: auto; */
-  /* margin: auto; */
+    font-size: .85em;
+    border: 1px solid rgba(181,213,144,0.5);
+    color: #666;
+    border-collapse: collapse;
+    /* margin-left:auto;
+    margin-right: auto; */
+    /* margin: auto; */
 }
 
 .table-detail td, .table-detail th{
-  padding: .8em;
-  border-bottom: 1px solid rgba(181, 213, 144, 0.5);
+    padding: .8em;
+    border-bottom: 1px solid rgba(181, 213, 144, 0.5);
 }
 
 .table-detail th{
-  background: rgb(201, 80, 86);
-  color: #fff;
-  font-weight: normal;
-  text-align: right;
+    background: rgb(201, 80, 86);
+    color: #fff;
+    font-weight: normal;
+    text-align: right;
 }
 
 .table-detail td{
-  text-align: center;
+    text-align: center;
 }
 
+<<<<<<< HEAD
+@media (min-width: 360px) and (max-width: 768px) {
+    body{
+      background: aliceblue;
+    }
+    .logoImg{
+        width: 100px;
+        height: 80px;
+    }
+    header h1{
+        font-size: 26px;
+        margin-bottom: 0;
+    }
+
+    .rioLogo{
+        width: 226px;
+        height: 175px;
+        padding-right: 3%;
+    }
+
+    /* section{
+      width: 48%;
+    } */
+  }
+ 
+  /* @media (min-width: 768px) {
+    body{
+      background: red;
+    }
+    section{
+      width: 31.33%;
+    }
+  } */
+  
+  /* @media (min-width: 1200px) {
+    body{
+      background: yellow;
+    }
+    section{
+      width: 23%;
+    }
+  } */
+=======
+>>>>>>> d31cd1e8ffb5878de880a578a4e309ecf66de7e8
