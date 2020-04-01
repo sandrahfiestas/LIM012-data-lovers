@@ -2,6 +2,15 @@ import { filterAtletasForYear } from './data.js';
 import data from './data/atletas/atletas.js';
 // import atletas from './data/atletas/atletas.js';
 
+
+/*
+// practica filter
+const arrayDisciplinas = data.atletas.filter(arr => arr.hasOwnProperty('disciplinas'));
+const array2016 = arrayDisciplinas.filter(year => year.disciplinas[0].año === 2016);
+console.log(array2016);
+*/
+
+
 // Definicion de variables
 const containerMain = document.getElementById('containerMain');
 containerMain.classList.remove('hideData');
@@ -62,7 +71,7 @@ const select = `
   <option value="2002">Salt Lake City 2002</option>
   <option value="2000">Sydney 2000</option>
   </select id="olimpiadas">
-  <p class="counter">Total de atletas ${data.atletas.length}</p>
+  <p id="cuenta" class="counter">Total de atletas</p>
 `;
 
 divElement.innerHTML = select;
@@ -72,13 +81,26 @@ divElement.querySelector('#year').addEventListener('change', (event) => {
   const selectedYear = parseInt(event.target.value);
   const filteredData = filterAtletasForYear(arrDataAtletas, selectedYear);
   let stringTemplate = '';
-  for (let i = 0; i < filteredData.length; i++) {
+  let contador = 1;
+
+  /*
+  const aFilteredData = filteredData.filter((valorActual, indiceActual, arreglo) => {
+   return arreglo.findIndex(
+      valorDelArreglo => JSON.stringify(valorDelArreglo) === JSON.stringify(valorActual)) === indiceActual
+  });
+  */
+
+  for (let i = 0; i < aFilteredData.length; i++) {
     stringTemplate += `<tr>
-                        <td>${filteredData[i].name}<span> ${filteredData[i].sport}</span</td>
+                        <td>${contador++}${aFilteredData[i].name}<span> ${aFilteredData[i].sport}</span</td>
                       </tr>`;
+   // contador++;
   }
   divTable.querySelector('#pintarData').innerHTML = stringTemplate;
-  console.log(stringTemplate);
+  divElement.querySelector('#cuenta').innerHTML = contador;
+
+  // console.log(stringTemplate);
+  console.log(contador);
 });
 
 
