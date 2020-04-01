@@ -166,17 +166,27 @@ header nav a:hover {
     margin: auto;
     margin-bottom: 4%;
 }
+thead{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;;
+    width: 80%;
+}
+th{
+    padding: 2%;
 
+}
 td{ 
     /* display: none; */
     border-bottom: 1px solid rgb(189, 188, 188);
-    display: inline-flex;
     padding: 2%;
-    width: 100%;
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
 }
 td:hover {background-color: #f5f5f5;}
 
-.tableLeft{
+/* .tableLeft{
     display: inline;
     margin-left: auto;
     margin-right: 0;
@@ -185,10 +195,7 @@ td:hover {background-color: #f5f5f5;}
 .tableTitleLeft{
     padding-left: 35%;
     padding-right: 0;
-}
-th{
-    padding: 5%;
-}
+} */
 
 #myBtn{
     background: #D64045;

@@ -5,11 +5,11 @@ import data from './data/atletas/atletas.js';
 
 export const filterAtletasForYear = (arr, num) => {
   const newArr = [];
-  for (let i = 0; i < arr.length; i++) {
+  for (let i = 0; i < arr.length; i += 1) {
     // console.log(arrDataAtletas[i].disciplinas);
     if (arr[i].hasOwnProperty('disciplinas')) {
       const arrayDisciplinas = arr[i].disciplinas;
-      for (let j = 0; j < arrayDisciplinas.length; j++) {
+      for (let j = 0; j < arrayDisciplinas.length; j += 1) {
         if (arrayDisciplinas[j]['año'] === num) {
           newArr.push(arr[i]);
         }
@@ -18,5 +18,30 @@ export const filterAtletasForYear = (arr, num) => {
   }
   return newArr;
 };
+
+// export const reduceArray = (array) => {
+//   array.reduce((acc, currentValue) => {
+//     if (acc.indexOf(currentValue) === -1) {
+//       acc.push(currentValue);
+//     }
+//     return acc;
+//   }, []);
+// };
+
+// export const filterAtletasForYearTwo = (atleta) => {
+//   atleta.forEach((element) => {
+//     let elementos = '';
+//     const name = element.name;
+//   //  if (!element.disciplinas) {
+//     element.disciplinas.forEach((objeto) => {
+//       elementos = `<tr class=""><td>${name}
+//         <span class="tableLeft">${objeto.ciudad}
+//         ${objeto.año}</span></td></tr>`;
+//     //   console.dir(objeto);
+//       return elementos;
+//     });
+//    //  }
+//   });
+// };
 
 export default data.js;

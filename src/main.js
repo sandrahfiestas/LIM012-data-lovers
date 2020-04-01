@@ -1,17 +1,12 @@
-import { filterAtletasForYear } from './data.js';
+import {
+  filterAtletasForYear,
+} from './data.js';
 import data from './data/atletas/atletas.js';
 // import atletas from './data/atletas/atletas.js';
 
 
-/*
-// practica filter
-const arrayDisciplinas = data.atletas.filter(arr => arr.hasOwnProperty('disciplinas'));
-const array2016 = arrayDisciplinas.filter(year => year.disciplinas[0].año === 2016);
-console.log(array2016);
-*/
-
-
-// Definicion de variables
+// DEFINICION DE VARIABLES
+const arrDataAtletas = data.atletas;
 const containerMain = document.getElementById('containerMain');
 containerMain.classList.remove('hideData');
 const byName = document.getElementById('byName');
@@ -22,24 +17,7 @@ const btnByName = document.getElementById('btnByName');
 // const btnVerMas = document.getElementById('btnVerMas');
 
 
-// BOTONES
-// botón del menú "MIRA MAS ATLETAS"
-btnByName.addEventListener('click', () => {
-  containerMain.classList.add('hideData');
-  byName.classList.remove('hideData');
-  // dVerMas.classList.remove('hideData');
-  /* Neliada llama funcion
-  const listFuncion = list(data.atletas);
-  document.getElementById('atletasRow').innerHTML = listFuncion; */
-});
-
-// botón "Ver más atletas" SiFunciona
-// btnVerMas.addEventListener('click', () => {
-//   document.getElementById('masAtletas').classList.remove('hideData');
-// });
-
-const arrDataAtletas = data.atletas;
-
+// CREANDO ELEMENTOS HISTORIA UNO
 const h1Element = document.createElement('h1');
 const divElement = document.createElement('div');
 h1Element.classList.add('title');
@@ -47,12 +25,52 @@ h1Element.textContent = 'ATLETAS OLIMPICOS';
 divElement.classList.add('counterAndList');
 const divTable = document.createElement('div');
 
-// tabla de nombres de atletas y olimpiadas
+
+// BOTON DEL MENU "MIRA MAS ATLETAS"
+btnByName.addEventListener('click', () => {
+  containerMain.classList.add('hideData');
+  byName.classList.remove('hideData');
+  // dVerMas.classList.remove('hideData');
+  //  Neliada llama funcion
+  const filterAtletas2016 = filterAtletasForYear(arrDataAtletas, 2016);
+  const myOrderedArray = filterAtletas2016.reduce((acc, currentValue) => {
+    if (acc.indexOf(currentValue) === -1) {
+      acc.push(currentValue);
+    }
+    return acc;
+  }, []);
+  let displayTemp2016 = '';
+  let i = 1;
+  for (; i < myOrderedArray.length; i++) {
+    displayTemp2016 = myOrderedArray.map(arr => `<tr><td>${i++} ${arr.name}<span>${arr.sport}</span</td></tr>`).join('');
+  }
+  divTable.querySelector('#pintarData').innerHTML = displayTemp2016;
+  divElement.querySelector('#cuenta').innerHTML = ` Total de atletas ${i - 2}`;
+});
+
+
+/*
+  // PRACTICA filter SF
+  const arrayDisciplinas = data.atletas.filter(arr => arr.hasOwnProperty('disciplinas'));
+  const array2016 = arrayDisciplinas.filter(year => year.disciplinas[0].año === 2016);
+  console.log(array2016);
+
+*/
+
+/*
+// BOTON "VER MAS ATLETAS" SF
+btnVerMas.addEventListener('click', () => {
+  document.getElementById('masAtletas').classList.remove('hideData');
+});
+*/
+
+
+// TABLA NOMBRES DE ATLETAS Y OLIMPIADAS
 const markupTable = `
 <table id="atletasTb" class="tableContent">
     <thead>
-      <th>Nombre <span class="tableTitleLeft"></span></th>
-      <th> Olimpiada <span class="tableTitleLeft"></span></th>
+      <th>Nombre</th>
+      <th> Olimpiada</span></th>
     </thead>
     <tbody id="pintarData">
     </tbody>
@@ -71,7 +89,7 @@ const select = `
   <option value="2002">Salt Lake City 2002</option>
   <option value="2000">Sydney 2000</option>
   </select id="olimpiadas">
-  <p id="cuenta" class="counter">Total de atletas</p>
+  <p id="cuenta" class ="counter"</p>
 `;
 
 divElement.innerHTML = select;
@@ -80,34 +98,29 @@ divTable.innerHTML = markupTable;
 divElement.querySelector('#year').addEventListener('change', (event) => {
   const selectedYear = parseInt(event.target.value);
   const filteredData = filterAtletasForYear(arrDataAtletas, selectedYear);
+
+  const myOrderedArray = filteredData.reduce((acc, currentValue) => {
+    if (acc.indexOf(currentValue) === -1) {
+      acc.push(currentValue);
+    }
+    return acc;
+  }, []);
+
   let stringTemplate = '';
-  let contador = 1;
-
-  /*
-  const aFilteredData = filteredData.filter((valorActual, indiceActual, arreglo) => {
-   return arreglo.findIndex(
-      valorDelArreglo => JSON.stringify(valorDelArreglo) === JSON.stringify(valorActual)) === indiceActual
-  });
-  */
-
-  for (let i = 0; i < aFilteredData.length; i++) {
-    stringTemplate += `<tr>
-                        <td>${contador++}${aFilteredData[i].name}<span> ${aFilteredData[i].sport}</span</td>
-                      </tr>`;
-   // contador++;
+  let i = 1;
+  for (; i < myOrderedArray.length; i++) {
+    stringTemplate = myOrderedArray.map(x => `<tr><td>${i++} ${x.name}<span>${x.sport}</span</td></tr>`).join('');
   }
   divTable.querySelector('#pintarData').innerHTML = stringTemplate;
-  divElement.querySelector('#cuenta').innerHTML = contador;
-
-  // console.log(stringTemplate);
-  console.log(contador);
+  divElement.querySelector('#cuenta').innerHTML = ` Total de atletas ${i - 2}`;
 });
 
 
-// tabla de atletas
+// VENTANA ATLETAS OLIMPICOS
 document.getElementById('byName').appendChild(h1Element);
 document.getElementById('byName').appendChild(divElement);
 document.getElementById('byName').appendChild(divTable);
+
 
 /* NELIDA
 // practica filtra nombre y año con forEach (
@@ -160,3 +173,13 @@ const atletasNames = (element, index) => {
 //   }
 //   return elementos;
 // }).join('');
+
+/*
+  // USANDO JSON
+  const aFilteredData = filteredData.filter((valorActual, indiceActual, arreglo) => {
+   return arreglo.findIndex(
+     valorDelArreglo => JSON.stringify(valorDelArreglo) === JSON.stringify(valorActual)
+     ) === indiceActual
+  });
+  */
+ 
