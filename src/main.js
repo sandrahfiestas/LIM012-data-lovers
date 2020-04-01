@@ -13,6 +13,14 @@ const btnByName = document.getElementById('btnByName');
 // dVerMas.classList.remove('hideData');
 // const btnVerMas = document.getElementById('btnVerMas');
 
+/* CREANDO ELEMENTOS HISTORIA UNO */
+const h1Element = document.createElement('h1');
+const divElement = document.createElement('div');
+h1Element.classList.add('title');
+h1Element.textContent = 'ATLETAS OLIMPICOS';
+divElement.classList.add('counterAndList');
+const divTable = document.createElement('div');
+
 
 // BOTONES
 // botón del menú "MIRA MAS ATLETAS"
@@ -21,8 +29,10 @@ btnByName.addEventListener('click', () => {
   byName.classList.remove('hideData');
   // dVerMas.classList.remove('hideData');
   //  Neliada llama funcion
-  // const filterAtletasForFunction = filterAtletasForYear(arrDataAtletas, 2016);
-  // document.getElementById('atletasRow').innerHTML = filterAtletasForFunction;
+  const filterAtletas2016 = filterAtletasForYear(arrDataAtletas, 2016);
+  // console.log(typeof filterAtletasForFunction);
+  const displayTemp = filterAtletas2016.map(arr => `<tr><td>${arr.name}<span>${arr.sport}</span</td></tr>`).join('');
+  divTable.querySelector('#pintarData').innerHTML = displayTemp;
 });
 
 // botón "Ver más atletas" SiFunciona
@@ -30,13 +40,6 @@ btnByName.addEventListener('click', () => {
 //   document.getElementById('masAtletas').classList.remove('hideData');
 // });
 
-
-const h1Element = document.createElement('h1');
-const divElement = document.createElement('div');
-h1Element.classList.add('title');
-h1Element.textContent = 'ATLETAS OLIMPICOS';
-divElement.classList.add('counterAndList');
-const divTable = document.createElement('div');
 
 // tabla de nombres de atletas y olimpiadas
 const markupTable = `
