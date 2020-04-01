@@ -1,4 +1,6 @@
-import { filterAtletasForYear } from './data.js';
+import {
+  filterAtletasForYear,
+} from './data.js';
 import data from './data/atletas/atletas.js';
 // import atletas from './data/atletas/atletas.js';
 
@@ -30,14 +32,25 @@ btnByName.addEventListener('click', () => {
   // dVerMas.classList.remove('hideData');
   //  Neliada llama funcion
   const filterAtletas2016 = filterAtletasForYear(arrDataAtletas, 2016);
-  // console.log(typeof filterAtletasForFunction);
-  const displayTemp2016 = filterAtletas2016.map(arr => `<tr><td>${arr.name}<span>${arr.sport}</span</td></tr>`).join('');
+  const myOrderedArray = filterAtletas2016.reduce((acc, currentValue) => {
+    if (acc.indexOf(currentValue) === -1) {
+      acc.push(currentValue);
+    }
+    return acc;
+  }, []);
+  let displayTemp2016 = '';
+  let i = 1;
+  for (; i < myOrderedArray.length; i++) {
+    displayTemp2016 = myOrderedArray.map(arr => `<tr><td>${i++} ${arr.name}<span>${arr.sport}</span</td></tr>`).join('');
+  }
   divTable.querySelector('#pintarData').innerHTML = displayTemp2016;
+  divElement.querySelector('#cuenta').innerHTML = ` Total de atletas ${i - 2}`;
 });
 
 /*
   arrayDisciplinas = data.atletas.filter(arr => arr.hasOwnProperty('disciplinas'));
-  const array2016 = arrayDisciplinas.filter(year => year.disciplinas[0].año === 2016); console.log(array2016);
+  const array2016 = arrayDisciplinas.filter(year => year.disciplinas[0].año === 2016);
+  console.log(array2016);
 
 */
 
@@ -71,7 +84,7 @@ const select = `
   <option value="2002">Salt Lake City 2002</option>
   <option value="2000">Sydney 2000</option>
   </select id="olimpiadas">
-  <p id="counter"></p>
+  <p id="cuenta" class ="counter"</p>
 `;
 
 divElement.innerHTML = select;
@@ -80,10 +93,21 @@ divTable.innerHTML = markupTable;
 divElement.querySelector('#year').addEventListener('change', (event) => {
   const selectedYear = parseInt(event.target.value);
   const filteredData = filterAtletasForYear(arrDataAtletas, selectedYear);
-  const stringTemplate = filteredData.map(x => `<tr><td>${x.name}<span>${x.sport}</span</td></tr>`).join('');
+
+  const myOrderedArray = filteredData.reduce((acc, currentValue) => {
+    if (acc.indexOf(currentValue) === -1) {
+      acc.push(currentValue);
+    }
+    return acc;
+  }, []);
+
+  let stringTemplate = '';
+  let i = 1;
+  for (; i < myOrderedArray.length; i++) {
+    stringTemplate = myOrderedArray.map(x => `<tr><td>${i++} ${x.name}<span>${x.sport}</span</td></tr>`).join('');
+  }
   divTable.querySelector('#pintarData').innerHTML = stringTemplate;
-  // divTable.querySelector('#counter').innerHTML = counter;
-   // console.log(typeof stringTemplate);
+  divElement.querySelector('#cuenta').innerHTML = ` Total de atletas ${i - 2}`;
 });
 
 

@@ -19,6 +19,15 @@ export const filterAtletasForYear = (arr, num) => {
   return newArr;
 };
 
+// export const reduceArray = (array) => {
+//   array.reduce((acc, currentValue) => {
+//     if (acc.indexOf(currentValue) === -1) {
+//       acc.push(currentValue);
+//     }
+//     return acc;
+//   }, []);
+// };
+
 // export const filterAtletasForYearTwo = (atleta) => {
 //   atleta.forEach((element) => {
 //     let elementos = '';
@@ -34,7 +43,5 @@ export const filterAtletasForYear = (arr, num) => {
 //    //  }
 //   });
 // };
-
-
 
 export default data.js;
