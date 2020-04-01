@@ -31,9 +31,15 @@ btnByName.addEventListener('click', () => {
   //  Neliada llama funcion
   const filterAtletas2016 = filterAtletasForYear(arrDataAtletas, 2016);
   // console.log(typeof filterAtletasForFunction);
-  const displayTemp = filterAtletas2016.map(arr => `<tr><td>${arr.name}<span>${arr.sport}</span</td></tr>`).join('');
-  divTable.querySelector('#pintarData').innerHTML = displayTemp;
+  const displayTemp2016 = filterAtletas2016.map(arr => `<tr><td>${arr.name}<span>${arr.sport}</span</td></tr>`).join('');
+  divTable.querySelector('#pintarData').innerHTML = displayTemp2016;
 });
+
+/*
+  arrayDisciplinas = data.atletas.filter(arr => arr.hasOwnProperty('disciplinas'));
+  const array2016 = arrayDisciplinas.filter(year => year.disciplinas[0].año === 2016); console.log(array2016);
+
+*/
 
 // botón "Ver más atletas" SiFunciona
 // btnVerMas.addEventListener('click', () => {
@@ -65,7 +71,7 @@ const select = `
   <option value="2002">Salt Lake City 2002</option>
   <option value="2000">Sydney 2000</option>
   </select id="olimpiadas">
-  <p class="counter">Total de atletas ${data.atletas.length}</p>
+  <p id="counter"></p>
 `;
 
 divElement.innerHTML = select;
@@ -74,13 +80,10 @@ divTable.innerHTML = markupTable;
 divElement.querySelector('#year').addEventListener('change', (event) => {
   const selectedYear = parseInt(event.target.value);
   const filteredData = filterAtletasForYear(arrDataAtletas, selectedYear);
-  let stringTemplate = '';
-  for (let i = 0; i < filteredData.length; i += 1) {
-    stringTemplate += `<tr>
-                        <td>${filteredData[i].name}<span>${filteredData[i].sport}</span</td>
-                      </tr>`;
-  }
+  const stringTemplate = filteredData.map(x => `<tr><td>${x.name}<span>${x.sport}</span</td></tr>`).join('');
   divTable.querySelector('#pintarData').innerHTML = stringTemplate;
+  // divTable.querySelector('#counter').innerHTML = counter;
+   // console.log(typeof stringTemplate);
 });
 
 
