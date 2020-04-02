@@ -241,15 +241,7 @@ footer p{
 
 *{
     box-sizing: border-box;
-}
-  
-.hideWindow{
-    display: none;
-}
-
-.hideWindow{
-  display: none;
-}
+}  
 
 h1{
     text-align: center;
@@ -309,7 +301,6 @@ div.table-container{
     text-align: center;
 }
 
-<<<<<<< HEAD
 @media (min-width: 360px) and (max-width: 768px) {
     body{
       background: aliceblue;
@@ -332,7 +323,7 @@ div.table-container{
     /* section{
       width: 48%;
     } */
-  }
+}
  
   /* @media (min-width: 768px) {
     body{
@@ -351,5 +342,3 @@ div.table-container{
       width: 23%;
     }
   } */
-=======
->>>>>>> d31cd1e8ffb5878de880a578a4e309ecf66de7e8
