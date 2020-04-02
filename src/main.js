@@ -50,14 +50,6 @@ btnByName.addEventListener('click', () => {
 
 
 /*
-  // PRACTICA filter SF
-  const arrayDisciplinas = data.atletas.filter(arr => arr.hasOwnProperty('disciplinas'));
-  const array2016 = arrayDisciplinas.filter(year => year.disciplinas[0].año === 2016);
-  console.log(array2016);
-
-*/
-
-/*
 // BOTON "VER MAS ATLETAS" SF
 btnVerMas.addEventListener('click', () => {
   document.getElementById('masAtletas').classList.remove('hideData');
@@ -174,6 +166,15 @@ const atletasNames = (element, index) => {
 //   return elementos;
 // }).join('');
 
+
+/*
+  // (PRACTICA) filter SF
+  const arrayDisciplinas = data.atletas.filter(arr => arr.hasOwnProperty('disciplinas'));
+  const array2016 = arrayDisciplinas.filter(year => year.disciplinas[0].año === 2016);
+  console.log(array2016);
+
+*/
+
 /*
   // USANDO JSON
   const aFilteredData = filteredData.filter((valorActual, indiceActual, arreglo) => {
@@ -182,4 +183,3 @@ const atletasNames = (element, index) => {
      ) === indiceActual
   });
   */
- 
