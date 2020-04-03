@@ -22,7 +22,6 @@ const testOne = [
     name: 'Hassan Aliazam Yazdanicharati',
     sport: 'Wrestling',
     game: '2016 Summer',
-    team: 'Iran',
     disciplinas: [
       {
         disciplina: "Wrestling Men's Middleweight, Freestyle",
@@ -38,7 +37,6 @@ const testOne = [
     name: 'Zhang Fengliu',
     sport: 'Wrestling',
     game: '2016 Summer',
-    team: 'China',
     disciplinas: [
       {
         disciplina: "Wrestling Women's Heavyweight, Freestyle",
@@ -54,7 +52,6 @@ const testOne = [
     name: 'Valeriya Sergeyevna Zholobova-Koblova',
     sport: 'Wrestling',
     game: '2016 Summer',
-    team: 'Russia',
     disciplinas: [
       {
         disciplina: "Wrestling Women's Lightweight, Freestyle",
@@ -88,7 +85,6 @@ const testAnswer2016 = [
     name: 'Hassan Aliazam Yazdanicharati',
     sport: 'Wrestling',
     game: '2016 Summer',
-    team: 'Iran',
     disciplinas: [
       {
         disciplina: "Wrestling Men's Middleweight, Freestyle",
@@ -104,7 +100,6 @@ const testAnswer2016 = [
     name: 'Zhang Fengliu',
     sport: 'Wrestling',
     game: '2016 Summer',
-    team: 'China',
     disciplinas: [
       {
         disciplina: "Wrestling Women's Heavyweight, Freestyle",

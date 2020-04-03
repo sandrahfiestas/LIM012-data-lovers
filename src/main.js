@@ -73,13 +73,6 @@ logoRightClick.addEventListener('click', () => {
   window.location.reload();
 });
 
-/*
-  arrayDisciplinas = data.atletas.filter(arr => arr.hasOwnProperty('disciplinas'));
-  const array2016 = arrayDisciplinas.filter(year => year.disciplinas[0].año === 2016);
-  console.log(array2016);
-
-*/
-
 // botón "Ver más atletas" SiFunciona
 // btnVerMas.addEventListener('click', () => {
 //   document.getElementById('masAtletas').classList.remove('hideData');
@@ -142,55 +135,3 @@ divElement.querySelector('#year').addEventListener('change', (event) => {
 document.getElementById('byName').appendChild(h1Element);
 document.getElementById('byName').appendChild(divElement);
 document.getElementById('byName').appendChild(divTable);
-
-/* NELIDA
-// practica filtra nombre y año con forEach (
-  data.atletas.forEach((atleta) => {
-    if (!atleta.disciplinas) {
-      console.dir(atleta);
-    }
-  });
-
-// practica filtra nombre y año con forEach (
-const list = (atleta) => {
-  atleta.forEach((element) => {
-    let elementos = '';
-    const name = element.name;
-  //  if (!element.disciplinas) {
-    element.disciplinas.forEach((objeto) => {
-      elementos = `<tr class=""><td>${name}
-        <span class="tableLeft">${objeto.ciudad}
-        ${objeto.año}</span></td></tr>`;
-    //   console.dir(objeto);
-      return elementos;
-    });
-   //  }
-  });
-};
-*/
-
-// Muestra los 5 primeros registros (HISTORIA 1)
-/*
-const atletasNames = (element, index) => {
-  let elementos = '';
-  if (index < 5) {
-    elementos = `<tr class=""><td>${element.name}
-      <span class="tableLeft">${element.disciplinas[0]['ciudad']}
-      ${element.disciplinas[0]['año']}</span></td></tr>`;
-  }
-  return elementos;
-};
-// ${data.atletas.map(atletasNames).join('')}
-*/
-
-// atletas.map((element, index, year) => {
-//   let elementos = '';
-//   if (index < 6000) {
-//     if (element.disciplinas[0]['año'] === year) {
-//       elementos = `<tr class=""><td>${element.name}
-//     <span class="tableLeft">${element.disciplinas[0]['ciudad']}
-//     ${element.disciplinas[0]['año']}</span></td></tr>`;
-//     }
-//   }
-//   return elementos;
-// }).join('');
