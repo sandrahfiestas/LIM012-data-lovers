@@ -172,7 +172,7 @@ solución usando papel y lápiz. Te recomendamos tomar fotos de todas las
 iteraciones que hagas, que las subas a tu repositorio y las menciones en tu
 `README.md`.
 
-![](src/img/ImagenesREADME/paginaPrincipalVersionDos.jpeg)
+![Pagina principal ultima version](/img/ImagenesREADME/paginaPrincipalVersionDos.jpeg)
 <!-- <img src="src/img/ImagenesREADME/paginaPrincipalVersionDos.jpeg">
 
 <img src="src/img/ImagenesREADME/paginaPrincipalVersionUno.jpeg"> -->
