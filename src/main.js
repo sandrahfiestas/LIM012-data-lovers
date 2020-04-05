@@ -19,6 +19,7 @@ const logoLeftClick = document.getElementById('logoLeftClick');
 const logoRightClick = document.getElementById('logoRightClick');
 const h1Click = document.getElementById('h1Click');
 
+
 /* CREANDO ELEMENTOS HISTORIA UNO */
 const h1Element = document.createElement('h1');
 const divElement = document.createElement('div');
@@ -45,11 +46,22 @@ btnByName.addEventListener('click', () => {
   let displayTemp2016 = '';
   for (let i = 0; i < myOrderedArray.length; i += 1) {
     const orden = i + 1;
-    displayTemp2016 += `<tr><td>${orden}  ${myOrderedArray[i].name}</td></tr>`;
+    displayTemp2016 += `<tr id="value" class="ficha">
+                          <td class="small">${orden}</td>
+                          <td>${myOrderedArray[i].name}</td>
+                          <td class="textEnd">${myOrderedArray[i].sport}</td>
+                          </tr>`;
   }
   divTable.querySelector('#pintarData').innerHTML = displayTemp2016;
   divElement.querySelector('#cuenta').innerHTML = ` Total de atletas ${myOrderedArray.length}`;
-  // divElement.querySelector('#year').value =
+});
+
+divTable.querySelector('.ficha').addEventListener('click', () => {
+  containerMain.classList.add('hideData');
+  byName.classList.add('hideData');
+  fichaAtleta.classList.remove('hideData');
+  const dataValue = divTable.querySelector('#value').textContent;
+  console.log(dataValue);
 });
 
 // BOTON DEPORTES MOSTAR FICHA DE ATLETA
@@ -112,6 +124,7 @@ divTable.innerHTML = markupTable;
 divElement.querySelector('#year').addEventListener('change', (event) => {
   const selectedYear = parseInt(event.target.value, 10);
   const filteredData = filterAtletasForYear(arrDataAtletas, selectedYear);
+  let stringTemplate = '';
 
   const myOrderedArray = filteredData.reduce((acc, currentValue) => {
     if (acc.indexOf(currentValue) === -1) {
@@ -121,16 +134,24 @@ divElement.querySelector('#year').addEventListener('change', (event) => {
   }, []);
   // console.log(filteredData);
   // console.log(myOrderedArray);
-  let stringTemplate = '';
   for (let i = 0; i < myOrderedArray.length; i += 1) {
     const orden = i + 1;
-    stringTemplate += `<tr><td>${orden}  ${myOrderedArray[i].name}</td></tr>`;
+    stringTemplate += `<tr id="value" data-href="#table-container">
+                          <td class="small">${orden}</td>
+                          <td>${myOrderedArray[i].name}</td>
+                          <td class="textEnd">${myOrderedArray[i].sport}</td>
+                       </tr>`;
   }
   divTable.querySelector('#pintarData').innerHTML = stringTemplate;
   divElement.querySelector('#cuenta').innerHTML = ` Total de atletas ${myOrderedArray.length}`;
 });
 
 
+// window.addEventListener('DOMContentLoaded', () => {
+// });
+// divElement.querySelector('tr[data-href]').addEventListener('DOMContentLoaded', () => {
+
+// });
 // tabla de atletas
 document.getElementById('byName').appendChild(h1Element);
 document.getElementById('byName').appendChild(divElement);

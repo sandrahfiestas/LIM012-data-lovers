@@ -172,6 +172,10 @@ solución usando papel y lápiz. Te recomendamos tomar fotos de todas las
 iteraciones que hagas, que las subas a tu repositorio y las menciones en tu
 `README.md`.
 
+<img src="/img/ImagenesREADME/paginaPrincipalVersionDos.jpeg" width="200" height="400">
+
+<img src="/img/ImagenesREADME/paginaPrincipalVersionUno.jpeg" width="200" height="400">
+
 #### Prototipo de alta fidelidad
 
 Lo siguiente es diseñar tu Interfaz de Usuario (UI por sus siglas en inglés -

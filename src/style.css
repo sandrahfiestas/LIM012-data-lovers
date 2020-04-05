@@ -174,28 +174,31 @@ thead{
 }
 th{
     padding: 2%;
+    margin: auto;
+    width: 80%;
+}
+tr{
+    display: flex;
+    flex-direction: row;
 
 }
 td{ 
     /* display: none; */
     border-bottom: 1px solid rgb(189, 188, 188);
     padding: 2%;
-    width: 90%;
+    width: 50%;
     display: flex;
     justify-content: space-between;
 }
-td:hover {background-color: #f5f5f5;}
+tr:hover {background-color: #f5f5f5;}
 
-/* .tableLeft{
-    display: inline;
-    margin-left: auto;
-    margin-right: 0;
+.textEnd{
+    display: flex;
+    justify-content: flex-end;
 }
-
-.tableTitleLeft{
-    padding-left: 35%;
-    padding-right: 0;
-} */
+.small{
+    width: 2%;
+}
 
 #myBtn{
     background: #D64045;
