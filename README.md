@@ -172,10 +172,8 @@ solución usando papel y lápiz. Te recomendamos tomar fotos de todas las
 iteraciones que hagas, que las subas a tu repositorio y las menciones en tu
 `README.md`.
 
-![Pagina principal ultima version](src/img/ImagenesREADME/paginaPrincipalVersionDos.jpeg)
-<!-- <img src="src/img/ImagenesREADME/paginaPrincipalVersionDos.jpeg">
+![json-interfaz](https://lh4.googleusercontent.com/Tn-RPXS26pVvOTdUzRT1KVaJ-_QbFs9SpcGLxSPE43fgbHaXtFgMUInuDt7kV41DkT1j8Tt29V0LxQW7SMtC6digOIhfTXSBKdwI08wUwhD3RAqlwy0hjfmhZ2BFe91mtmCSEqysfgk)
 
-<img src="src/img/ImagenesREADME/paginaPrincipalVersionUno.jpeg"> -->
 
 #### Prototipo de alta fidelidad
 
