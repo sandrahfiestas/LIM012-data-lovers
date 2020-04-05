@@ -174,9 +174,9 @@ iteraciones que hagas, que las subas a tu repositorio y las menciones en tu
 
 ![Pagina principal ultima version](/img/ImagenesREADME/paginaPrincipalVersionDos.jpeg)
 
-<img src="src/img/ImagenesREADME/paginaPrincipalVersionDos.jpeg">
+<!-- <img src="src/img/ImagenesREADME/paginaPrincipalVersionDos.jpeg">
 
-<img src="src/img/ImagenesREADME/paginaPrincipalVersionUno.jpeg">
+<img src="src/img/ImagenesREADME/paginaPrincipalVersionUno.jpeg"> -->
 
 #### Prototipo de alta fidelidad
 
