@@ -172,11 +172,11 @@ solución usando papel y lápiz. Te recomendamos tomar fotos de todas las
 iteraciones que hagas, que las subas a tu repositorio y las menciones en tu
 `README.md`.
 
-<!-- ![Pagina principal ultima version](/img/ImagenesREADME/paginaPrincipalVersionDos.jpeg) -->
+![Pagina principal ultima version](/img/ImagenesREADME/paginaPrincipalVersionDos.jpeg)
 
 <!-- <!-- <img src="src/img/ImagenesREADME/paginaPrincipalVersionDos.jpeg"> -->
 
-<img src="src/img/ImagenesREADME/paginaPrincipalVersionUno.jpeg"> -->
+<img src="src/img/ImagenesREADME/paginaPrincipalVersionUno.jpeg">
 
 #### Prototipo de alta fidelidad
 
@@ -193,7 +193,7 @@ El diseño debe representar el _ideal_ de tu solución. Digamos que es lo que
 desearías implementar si tuvieras tiempo ilimitado para trabajar. Además, tu
 diseño debe seguir los fundamentos de _visual design_.
 
-![Pagina principal ultima version](/img/ImagenesREADME/pAPaginaPrincipal.png)
+![Pagina principal ultima version](https://github.com/paula113/LIM012-data-lovers/blob/experiment/src/img/ImagenesREADME/pAPaginaPrincipal.png)
 
 #### Testeos de usabilidad
 
