@@ -1,11 +1,13 @@
 import {
   filterAtletasForYear,
+  filterAtletasForTemporada,
 } from './data.js';
 import data from './data/atletas/atletas.js';
 // import atletas from './data/atletas/atletas.js';
 
 // DEFINICION de variables
 const arrDataAtletas = data.atletas;
+
 const containerMain = document.getElementById('containerMain');
 containerMain.classList.remove('hideData');
 const byName = document.getElementById('byName');
@@ -14,7 +16,7 @@ const btnByName = document.getElementById('btnByName');
 // dVerMas.classList.remove('hideData');
 // const btnVerMas = document.getElementById('btnVerMas');
 const fichaAtleta = document.getElementById('table-container');
-const btnDeportes = document.getElementById('btnDeportes');
+// const btnDeportes = document.getElementById('btnDeportes');
 const logoLeftClick = document.getElementById('logoLeftClick');
 const logoRightClick = document.getElementById('logoRightClick');
 const h1Click = document.getElementById('h1Click');
@@ -50,26 +52,26 @@ btnByName.addEventListener('click', () => {
                           <td class="small">${orden}</td>
                           <td>${myOrderedArray[i].name}</td>
                           <td class="textEnd">${myOrderedArray[i].sport}</td>
-                          </tr>`;
+                        </tr>`;
   }
   divTable.querySelector('#pintarData').innerHTML = displayTemp2016;
   divElement.querySelector('#cuenta').innerHTML = ` Total de atletas ${myOrderedArray.length}`;
 });
 
-divTable.querySelector('.ficha').addEventListener('click', () => {
-  containerMain.classList.add('hideData');
-  byName.classList.add('hideData');
-  fichaAtleta.classList.remove('hideData');
-  const dataValue = divTable.querySelector('#value').textContent;
-  console.log(dataValue);
-});
+// divTable.querySelector('.ficha').addEventListener('click', () => {
+//   containerMain.classList.add('hideData');
+//   byName.classList.add('hideData');
+//   fichaAtleta.classList.remove('hideData');
+//   const dataValue = divTable.querySelector('#value').textContent;
+//   console.log(dataValue);
+// });
 
 // BOTON DEPORTES MOSTAR FICHA DE ATLETA
-btnDeportes.addEventListener('click', () => {
-  containerMain.classList.add('hideData');
-  byName.classList.add('hideData');
-  fichaAtleta.classList.remove('hideData');
-});
+// btnDeportes.addEventListener('click', () => {
+//   containerMain.classList.add('hideData');
+//   byName.classList.add('hideData');
+//   fichaAtleta.classList.remove('hideData');
+// });
 
 // BOTONES TITULO 'JUEGOS OLIMPICOS SIGLO XXI' Y LOGOS
 h1Click.addEventListener('click', () => {
@@ -94,10 +96,8 @@ logoRightClick.addEventListener('click', () => {
 // tabla de nombres de atletas y olimpiadas
 const markupTable = `
 <table id="atletasTb" class="tableContent">
-    <thead>
       <th>Nombre</th>
-      <th> Olimpiada</span></th>
-    </thead>
+      <th><span>DEPORTE</span></th>
     <tbody id="pintarData">
     </tbody>
 </table>
@@ -146,13 +146,76 @@ divElement.querySelector('#year').addEventListener('change', (event) => {
   divElement.querySelector('#cuenta').innerHTML = ` Total de atletas ${myOrderedArray.length}`;
 });
 
-
-// window.addEventListener('DOMContentLoaded', () => {
-// });
-// divElement.querySelector('tr[data-href]').addEventListener('DOMContentLoaded', () => {
-
-// });
 // tabla de atletas
 document.getElementById('byName').appendChild(h1Element);
 document.getElementById('byName').appendChild(divElement);
 document.getElementById('byName').appendChild(divTable);
+
+// ----BUSQUEDA POR DEPORTE----//
+const btnWinter = document.getElementById('winter');
+const winterSecction = document.getElementById('TemporadaInvierno');
+const winterContent = document.createElement('div');
+winterContent.classList.add('depotesdiv');
+winterSecction.appendChild(winterContent);
+
+const btnSummer = document.getElementById('summer');
+const summerSecction = document.getElementById('TemporadaVerano');
+const summerContent = document.createElement('div');
+summerContent.classList.add('depotesdiv');
+summerSecction.appendChild(summerContent);
+
+btnWinter.addEventListener('click', () => {
+  containerMain.classList.add('hideData');
+  winterSecction.classList.remove('hideData');
+  // DEPORTES FILTRADO POR TEMPORADA INVIERNO
+  const temporada = filterAtletasForTemporada(arrDataAtletas, 'Winter');
+  const myReduceTempSports = temporada.reduce((acc, currentValue) => {
+    if (acc.indexOf(currentValue) === -1) {
+      acc.push(currentValue);
+    }
+    return acc;
+  }, []);
+  const orderedtemp = myReduceTempSports.sort();
+  let strTemplate = '';
+  for (let i = 0; i < orderedtemp.length; i += 1) {
+    strTemplate += `<div id="listDiv"class="sportContainer">
+                         <p class="sportTitle">${orderedtemp[i]}</p>
+                   </div>`;
+  }
+  // console.log(orderedtemp);
+  // console.log(strTemplate);
+  winterContent.innerHTML = strTemplate;
+});
+
+const btnSortW = document.getElementById('btnSort');
+btnSortW.addEventListener('click', () => {
+  const sportDiv = winterContent.querySelectorAll('.sportTitle');
+  console.log(sportDiv);
+  console.log(winterContent.querySelectorAll('.sportTitle'));
+
+});
+
+btnSummer.addEventListener('click', () => {
+  containerMain.classList.add('hideData');
+  summerSecction.classList.remove('hideData');
+  // DEPORTES FILTRADO POR TEMPORADA VERANO
+  const temporada = filterAtletasForTemporada(arrDataAtletas, 'Summer');
+  // console.log(temporada);
+
+  const myReduceTempSports = temporada.reduce((acc, currentValue) => {
+    if (acc.indexOf(currentValue) === -1) {
+      acc.push(currentValue);
+    }
+    return acc;
+  }, []);
+  // console.log(myReduceTempSports);
+  const orderedtemp = myReduceTempSports.sort();
+  let strTemplate = '';
+  for (let i = 0; i < orderedtemp.length; i += 1) {
+    strTemplate += `<div class="sportContainer">
+                         <p class="sportTitle">${orderedtemp[i]}</p>
+                   </div>`;
+  }
+  // console.log(orderedtemp);
+  summerContent.innerHTML = strTemplate;
+});

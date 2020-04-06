@@ -19,6 +19,33 @@ export const filterAtletasForYear = (arr, num) => {
   return newArr;
 };
 
+export const filterAtletasForTemporada = (arr, temp) => {
+  const newArr = [];
+  arr.forEach((element) => {
+    if (Object.prototype.hasOwnProperty.call(element, 'disciplinas')) {
+      element.disciplinas.forEach((x) => {
+        if (x.temporada === temp) {
+          newArr.push(element.sport);
+        }
+      });
+    }
+  });
+  return newArr;
+};
+
+/*
+// Reducing an Array
+export const myReduceArray = (arr) => {
+  arr.reduce((acc, currentValue) => {
+    if (acc.indexOf(currentValue) === -1) {
+      acc.push(currentValue);
+    }
+    return acc;
+  }, []);
+};
+*/
+
+
 // const topMedallistas = (arr, num) => {
 //   const medallistas = [];
 //   for (let i = 0; i < arr.length; i++) {
