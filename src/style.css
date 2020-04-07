@@ -408,48 +408,12 @@ h1{
 }
 
 
-
-
-/* .elemento {
-    border-radius: 15px;
-    flex-grow: 1;
-    margin: 1px;
-    text-align: center;
-}
-
-.elemento1 {
-    height: 150px;
-}
-
-.elemento2 {
-    height: 150px;
-    text-align: left;
-    flex-shrink: 3;
-}
-
-.elemento2 p {
-    font-weight: bold;
-}
-
-.elemento3 {
-    height: 150px;
-    text-align: left;
-    flex-grow: 5;
-}
-
-.elemento4 {
-    height: 240px; 
-}
-*/
-
 .colorFondo1 {
-    background: #c2b8b8;
     width: 100%;
     height: 50%;
 }
 
 .colorFondo2 {
-    background: hsla(135, 68%, 41%, 0.884);
     width: 100%;
     height: 50%;
 }
