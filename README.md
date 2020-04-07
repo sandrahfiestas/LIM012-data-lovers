@@ -1,3 +1,80 @@
+# Juegos Olimpicos Siglo XXI
+
+## Índice
+ * [1. Definición del producto](#1-definición)
+ * [2. Historias de usuario](#2-historias-de-usuario)
+
+
+***
+
+## 1. Definición del producto
+
+El proyecto JUEGOS OLIMPICOS SIGLO XXI, ha sido diseñado pensando en un(a) usuario(a) atleta, aunque no olímpico. El usuario encontrará información tanto general como detallada de atletas que participaron en Juegos Olímpicos.
+Cubre la necesidad del usuario de poder encontrar a detalle datos personales relevantes en un proceso olímpico (nombre, altura, peso, años, deporte, equipo) así como su desempeño en participación (medallas obtenidas). Estos datos permitirán al usuario poder evaluar o comparar su propio desempeño para un mejor rendimiento atlético.
+
+
+## 2. Historias de usuario
+
+### Historia de Usuario N°1: “Por Atleta”
+
+**Descripción:**
+Yo como: Atleta
+Quiero: ver la lista de atletas olímpicos
+Para: conocer los nombres de los participantes
+
+**Criterios de Aceptación:**
+El usuario encontrará en el menú principal la opción " Mira más de atletas".
+Al hacer click, se mostrará una lista, con los nombres de los atletas.
+
+**Definición de terminado:**
+El prototipo de baja fidelidad tiene que pasar feedback y testeo.
+Responsive en mobil y desktop.
+El prototipo de alta fidelidad tiene que pasar feedback y testeo.
+Buenas prácticas.
+Subir a github.
+
+
+### Historia de Usuario N°2: “Por olimpiada”
+
+**Descripción:**
+Yo como: Atleta
+Quiero: Buscar la lista de atletas participantes en la ultima olimpiada
+Para : Conocer los atletas participantes
+
+**Criterios de Aceptación:**
+El usuario encontrará en la parte superior derecha un dropdown list que le permitira acceder a la lista de atletas por año olimpico.
+El usuario encontrará el año de la ultima olimpiada y se mostrara una lista con los nombres de los atletas participantes.
+
+**Definición de terminado:**
+El prototipo de baja fidelidad tiene que pasar feedback y testeo.
+Responsive en mobil y desktop.
+El prototipo de alta fidelidad tiene que pasar feedback y testeo.
+Buenas prácticas.
+Test unitarios.
+Subir a github.
+
+
+### Historia de Usuario N°3: “Cantidad de atletas”
+
+**Descripción:**
+Yo como: Atleta
+Quiero: saber la cantidad total de atletas participantes
+Para: conocer el indice de participación
+
+**Criterios de Aceptación:**
+El usuario encontrara en la parte superios derecha (debajo del dropdownlist) la cantidad de atletas que coincida con el año selectionado por el usuario
+
+**Definición de terminado:**
+El prototipo de baja fidelidad tiene que pasar feedback y testeo.
+Responsive en mobil y desktop.
+El prototipo de alta fidelidad tiene que pasar feedback y testeo.
+Buenas prácticas.
+Subir a github.
+
+
+
+***
+
 # Data Lovers
 
 ## Índice

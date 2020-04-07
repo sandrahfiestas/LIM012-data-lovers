@@ -1,4 +1,5 @@
 // import { example, anotherExample } from '../src/data.js';
+
 import { filterAtletasForYear } from '../src/data.js';
 
 const testOne = [
