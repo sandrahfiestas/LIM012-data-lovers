@@ -1,5 +1,6 @@
 import {
   filterAtletasForYear,
+  filterAtletasForTemporada,
   displayAllData,
 } from './data.js';
 import data from './data/atletas/atletas.js';
@@ -8,6 +9,7 @@ import data from './data/atletas/atletas.js';
 
 // DEFINICION DE VARIABLES
 const arrDataAtletas = data.atletas;
+
 const containerMain = document.getElementById('containerMain');
 containerMain.classList.remove('hideData');
 const byName = document.getElementById('byName');
@@ -67,6 +69,7 @@ btnByName.addEventListener('click', () => {
   let displayTemp2016 = '';
   for (let i = 0; i < myOrderedArray.length; i += 1) {
     const orden = i + 1;
+
     displayTemp2016 += `<tr class="olympiCelda" id="value">  
                           <td class="small">${orden}</td>
                           <td class="">${myOrderedArray[i].name}</td>
@@ -188,6 +191,7 @@ divAll2.innerHTML = fichaTable;
 divElement.querySelector('#year').addEventListener('change', (event) => {
   const selectedYear = parseInt(event.target.value, 10);
   const filteredData = filterAtletasForYear(arrDataAtletas, selectedYear);
+  let stringTemplate = '';
 
   const myOrderedArray = filteredData.reduce((acc, currentValue) => {
     if (acc.indexOf(currentValue) === -1) {
@@ -197,7 +201,6 @@ divElement.querySelector('#year').addEventListener('change', (event) => {
   }, []);
   // console.log(filteredData);
   // console.log(myOrderedArray);
-  let stringTemplate = '';
   for (let i = 0; i < myOrderedArray.length; i += 1) {
     const orden = i + 1;
     stringTemplate += `<tr id="value" class="olympiCelda">
@@ -208,6 +211,76 @@ divElement.querySelector('#year').addEventListener('change', (event) => {
   }
   divTable.querySelector('#pintarData').innerHTML = stringTemplate;
   divElement.querySelector('#cuenta').innerHTML = `Total de atletas ${myOrderedArray.length}`;
+});
+
+// ----BUSQUEDA POR DEPORTE----//
+const btnWinter = document.getElementById('winter');
+const winterSecction = document.getElementById('TemporadaInvierno');
+const winterContent = document.createElement('div');
+winterContent.classList.add('depotesdiv');
+winterSecction.appendChild(winterContent);
+
+const btnSummer = document.getElementById('summer');
+const summerSecction = document.getElementById('TemporadaVerano');
+const summerContent = document.createElement('div');
+summerContent.classList.add('depotesdiv');
+summerSecction.appendChild(summerContent);
+
+btnWinter.addEventListener('click', () => {
+  containerMain.classList.add('hideData');
+  winterSecction.classList.remove('hideData');
+  summerSecction.classList.add('hideData');
+  // DEPORTES FILTRADO POR TEMPORADA INVIERNO
+  const temporada = filterAtletasForTemporada(arrDataAtletas, 'Winter');
+  const myReduceTempSports = temporada.reduce((acc, currentValue) => {
+    if (acc.indexOf(currentValue) === -1) {
+      acc.push(currentValue);
+    }
+    return acc;
+  }, []);
+  const orderedtemp = myReduceTempSports.sort();
+  let strTemplate = '';
+  for (let i = 0; i < orderedtemp.length; i += 1) {
+    strTemplate += `<div id="listDiv"class="sportContainer">
+                         <p class="sportTitle">${orderedtemp[i]}</p>
+                   </div>`;
+  }
+  // console.log(orderedtemp);
+  // console.log(strTemplate);
+  winterContent.innerHTML = strTemplate;
+});
+
+const btnSortW = document.getElementById('btnSort');
+btnSortW.addEventListener('click', () => {
+  const sportDiv = winterContent.querySelectorAll('.sportTitle');
+  console.log(sportDiv);
+  // console.log(winterContent.querySelectorAll('.sportTitle'));
+});
+
+btnSummer.addEventListener('click', () => {
+  containerMain.classList.add('hideData');
+  summerSecction.classList.remove('hideData');
+  winterSecction.classList.add('hideData');
+  // DEPORTES FILTRADO POR TEMPORADA VERANO
+  const temporada = filterAtletasForTemporada(arrDataAtletas, 'Summer');
+  // console.log(temporada);
+
+  const myReduceTempSports = temporada.reduce((acc, currentValue) => {
+    if (acc.indexOf(currentValue) === -1) {
+      acc.push(currentValue);
+    }
+    return acc;
+  }, []);
+  // console.log(myReduceTempSports);
+  const orderedtemp = myReduceTempSports.sort();
+  let strTemplate = '';
+  for (let i = 0; i < orderedtemp.length; i += 1) {
+    strTemplate += `<div class="sportContainer">
+                         <p class="sportTitle">${orderedtemp[i]}</p>
+                   </div>`;
+  }
+  // console.log(orderedtemp);
+  summerContent.innerHTML = strTemplate;
 });
 
 

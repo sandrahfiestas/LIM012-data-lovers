@@ -14,8 +14,17 @@
         <img src="/img/olympic_rings_PNG13.png" id="logoRightClick" class="logoImg" alt="">
       <nav class="navegador">
         <ul>
-          <li><a href="#byName"  id="btnByName">MIRA MAS DE ATLETAS</a></li>
-          <li><a href="#Deportes" id="btnDeportes">CONOCE MAS DE DEPORTES</a></li>
+          <li>
+            <a href="#byName" class="anchor"  id="btnByName" >MIRA MAS DE ATLETAS</a>
+          </li>
+          <li id="btnDeportes" class="anchor">CONOCE MAS DE DEPORTES</li>
+          <div class="DropMenuD">
+            <ul>
+              <li><a href="#TemporadaInvierno" id="winter" class="dropdown-content">INVIERNO</a></li>
+              <li><a href="#TemporadaVerano" id="summer" class="dropdown-content">VERANO</a></li>
+            </ul>
+          </div>
+          </li>
         </ul>
       </nav>
       </div>
@@ -54,7 +63,7 @@
       <div class="topMedallistas">
         <figure class="relieve">
           <img src="/img/karatee.jpeg" alt="">
-          <figcaption>Karete</figcaption>          
+          <figcaption>Taekwondo</figcaption>          
         </figure>
         <figure class="relieve">
           <img src="/img/swimmingUno.jpeg" alt="">
@@ -73,14 +82,21 @@
   </div>
     </main>
     <section id="byName" class="appearance hideData">
-
     </section>
-    
     <!-- <div id="dVerMas" class="centrado hideData" >
       <button id="btnVerMas"><strong>VER MAS ATLETAS</strong></button>
     </div> -->
     <div id="root"></div>
-   
+    <div>
+      <section id="TemporadaInvierno" class="hideData">
+        <h1 class="title">DEPORTES DE INVIERNO</h1>
+        <div id="btnSort" class="button">A-Z</div>
+      </section>
+      <section id="TemporadaVerano" class="hideData">
+        <h1 class="title">DEPORTES DE VERANO</h1>
+        <div id="btnSort" class="button">A-Z</div>
+      </section>
+    </div>
   <script src="main.js" type="module"></script>
   </body>
   <footer>

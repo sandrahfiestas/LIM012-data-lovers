@@ -54,7 +54,8 @@ header h1{
     margin: auto;
     flex-wrap: wrap;
     align-items:center;
-}
+} 
+
 .navegador ul{
     display: flex;
     flex-wrap: wrap;
@@ -66,9 +67,9 @@ header h1{
     /* line-height: 60px; */
     width: 50%;
 }
-.navegador li a{
+.anchor{
     display: inline-flex;
-    height: 100%;
+    height: 90%;
     width: 100%;
     padding: 0 10%;
     font-family: Oswald;
@@ -80,10 +81,41 @@ header h1{
     text-decoration: none;
     /* text-align: center; */
 }
-header nav a:hover {
+
+.anchor:hover {
     background:#FFFFFF;
     color: #D64045;
+} 
+.DropMenuD{
+    overflow: hidden;
+    cursor: pointer;
+    margin-left: 60%;
+    text-align: center;
+    /* border: solid 2px orangered; */
+    width: 20%;
+    height: 50%;
+    /* width: 3rem; */
+    /* display: none; */
+} 
+.DropMenuD ul{
+    display: flex;
+    flex-direction: column;
 }
+
+.dropdown-content{
+    color:  #1D3354;
+    text-decoration: none;
+    font-family: Oswald;
+    font-style: normal;
+    font-weight: normal;
+    /* display: none; */
+} 
+
+/* .DropMenuD:hover .DropMenuD {
+    border: solid 2px  orange;
+    display: flex;
+    flex-direction: column;
+} */
 .title{   
     display: flex;
     width: 80%;
@@ -172,6 +204,7 @@ th{
     margin: auto;
     width: 80%;
 }
+
 tr {
     display: flex;
     flex-direction: row;
@@ -185,12 +218,10 @@ td{
     display: flex;
     justify-content: space-between;
 }
-
 .texEnd {
     display: flex;
     justify-content: flex-end;
 }
-
 .small {
     width: 8%;
 }
@@ -208,6 +239,47 @@ td{
 
 }
 
+.button {
+    cursor: pointer;
+    border: 1px inset rgb(0, 0, 0);
+    font-size: 13px;
+    color: #FFFFFF;
+    padding: 0.5em 1em;
+    font-family: 'Lora', serif;
+    background: #D64045;
+    box-sizing: border-box;
+    border-radius: 18px;
+    width: 5%;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+}
+.depotesdiv{
+    /* border: solid 4px rgb(17, 17, 16); */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: auto;
+    padding: 2%;
+}
+.sportContainer{
+    justify-content: space-between;
+    background-color: #EBE9E9;
+    width: 33.3%;
+    height: 25%;
+    border: solid 20px #FFFDFD;
+}
+.sportTitle{
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 2em;
+    color: #1D3354;
+    padding: 1%;
+    text-align: center;
+    height: 25%;
+    margin: 5%;
+}
 footer{
     display: block;
     width: 100%;
@@ -237,7 +309,6 @@ h1{
 
 
 /* div.table-container{
-
     background: #f2f2f2;
     width: 60%;
     margin-left: auto;
@@ -247,12 +318,12 @@ h1{
     box-shadow: 0 0 0 10px #fff,
                 0 0 0 11px #fff,
                 0 20px 20px -12px #000;
-
 } */
  
 
 .tableProfile{
     /*border: 1px solid rgba(181,213,144,0.5);*/
+    
 }
 
 .tableProfile th{
@@ -313,6 +384,14 @@ h1{
         width: 226px;
         height: 175px;
         padding-right: 3%;
+    }
+
+    .sportContainer{
+        justify-content: space-between;
+        background-color: #EBE9E9;
+        width: 100%;
+        height: 50%;
+        border: solid 2px #FFFDFD;
     }
 
     /* section{

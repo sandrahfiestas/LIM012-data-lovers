@@ -3,7 +3,7 @@
 ## Índice
  * [1. Definición del producto](#1-definición)
  * [2. Historias de usuario](#2-historias-de-usuario)
-
+* [3. Diseño de la Interfaz de Usuario](#3-Diseño-de-la-Interfaz-de-Usuario)
 
 ***
 
@@ -70,6 +70,44 @@ Responsive en mobil y desktop.
 El prototipo de alta fidelidad tiene que pasar feedback y testeo.
 Buenas prácticas.
 Subir a github.
+
+
+## 3. Diseño de la Interfaz de Usuario
+
+#### Prototipo de baja fidelidad
+
+![Pagina principal version uno prototipo de baja Fidelidad](https://github.com/paula113/LIM012-data-lovers/blob/experiment/src/img/ImagenesREADME/paginaPrincipalVersionUno.jpeg)
+figura 1
+
+![Pagina principal prototipo de baja Fidelidad ultima version](https://github.com/paula113/LIM012-data-lovers/blob/experiment/src/img/ImagenesREADME/paginaPrincipalVersionDos.jpeg)
+figura 2
+
+![mostrar atletas prototipo de baja Fidelidad](https://github.com/paula113/LIM012-data-lovers/blob/experiment/src/img/ImagenesREADME/mostarAtletas.jpeg)
+figura 3
+
+![mostrar atletas y deportes prototipo de baja Fidelidad](https://github.com/paula113/LIM012-data-lovers/blob/experiment/src/img/ImagenesREADME/MostrarAtletas%26deportes.jpeg)
+figura 4
+
+![Ficha personal de atletaprototipo de baja fidelidad](https://github.com/paula113/LIM012-data-lovers/blob/experiment/src/img/ImagenesREADME/fichaAtletas.jpeg)
+figura 5
+
+![Filtar atletas por año prototipo de baja Fidelidad](https://github.com/paula113/LIM012-data-lovers/blob/experiment/src/img/ImagenesREADME/FiltrarPorA%C3%B1o.jpeg)
+figura 6
+
+#### Prototipo de alta fidelidad
+
+![Pagina principal Alta Fidelidad](https://github.com/paula113/LIM012-data-lovers/blob/experiment/src/img/ImagenesREADME/pAPaginaPrincipal.png)
+
+<!-- ![Pagina principal Diseño Responsive](https://github.com/paula113/LIM012-data-lovers/blob/experiment/src/img/ImagenesREADME/sise%C3%B1oResponsive.png) -->
+
+![Filtardo por año prototipo de alta fidelidad](https://github.com/paula113/LIM012-data-lovers/blob/experiment/src/img/ImagenesREADME/FiltarPorA%C3%B1o-pA.png)
+
+![Ficha personal de atletaprototipo de alta fidelidad](https://github.com/paula113/LIM012-data-lovers/blob/experiment/src/img/ImagenesREADME/fichaPersonalAtleta.png)
+
+#### Testeos de usabilidad
+
+El prototipo de baja Fidelidad de la pagina principal version uno (figura 1) mostraba la seccion de medallas
+oro, plata y bonze. Las cuales, se mencionaba a los atletas con mas medallas acumuladas por typpo de medalla. Luego de implementar los test de usabilidad notamos que la mencionada seccion causaba confusion a los usuarios, es decir que la idea presentada no cumplia con las espectaciones del usuario. Esto nos llevo a replantear la idea dicha seccion, mostrando asi a los atletas en lugar de las medallas (figura 2).
 
 
 
@@ -168,10 +206,10 @@ y de equipo.
 
 ### UX
 
-- [ ] Diseñar la aplicación pensando y entendiendo al usuario.
-- [ ] Crear prototipos para obtener _feedback_ e iterar.
-- [ ] Aplicar los principios de diseño visual (contraste, alineación, jerarquía).
-- [ ] Planear y ejecutar _tests_ de usabilidad.
+- [✔] Diseñar la aplicación pensando y entendiendo al usuario.
+- [✔] Crear prototipos para obtener _feedback_ e iterar.
+- [✔] Aplicar los principios de diseño visual (contraste, alineación, jerarquía).
+- [✔] Planear y ejecutar _tests_ de usabilidad.
 
 ### HTML y CSS
 
@@ -264,12 +302,14 @@ El diseño debe representar el _ideal_ de tu solución. Digamos que es lo que
 desearías implementar si tuvieras tiempo ilimitado para trabajar. Además, tu
 diseño debe seguir los fundamentos de _visual design_.
 
+
 #### Testeos de usabilidad
 
 Durante el reto deberás hacer _tests_ de usabilidad con distintos usuarios, y
 en base a los resultados, deberás iterar tus diseños. Cuéntanos
 qué problemas de usabilidad detectaste a través de los _tests_ y cómo los
 mejoraste en tu propuesta final.
+
 
 ### Implementación de la Interfaz de Usuario (HTML/CSS/JS)
 
