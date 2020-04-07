@@ -54,7 +54,8 @@ header h1{
     margin: auto;
     flex-wrap: wrap;
     align-items:center;
-}
+} 
+
 .navegador ul{
     display: flex;
     flex-wrap: wrap;
@@ -86,20 +87,32 @@ header h1{
     color: #D64045;
 } 
 .DropMenuD{
+    overflow: hidden;
+    cursor: pointer;
+    margin-left: 60%;
+    text-align: center;
+    /* border: solid 2px orangered; */
+    width: 20%;
+    height: 50%;
+    /* width: 3rem; */
+    /* display: none; */
+} 
+.DropMenuD ul{
     display: flex;
     flex-direction: column;
-    /* overflow: hidden; */
-    cursor: pointer;
-} 
+}
+
 .dropdown-content{
-    color: #1D3354;
+    color:  #1D3354;
     text-decoration: none;
     font-family: Oswald;
     font-style: normal;
     font-weight: normal;
+    /* display: none; */
 } 
-/* .DropMenuD:hover .dropdown-content {
-    border: orange;
+
+/* .DropMenuD:hover .DropMenuD {
+    border: solid 2px  orange;
     display: flex;
     flex-direction: column;
 } */

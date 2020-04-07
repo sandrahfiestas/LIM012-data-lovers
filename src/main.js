@@ -167,6 +167,7 @@ summerSecction.appendChild(summerContent);
 btnWinter.addEventListener('click', () => {
   containerMain.classList.add('hideData');
   winterSecction.classList.remove('hideData');
+  summerSecction.classList.add('hideData');
   // DEPORTES FILTRADO POR TEMPORADA INVIERNO
   const temporada = filterAtletasForTemporada(arrDataAtletas, 'Winter');
   const myReduceTempSports = temporada.reduce((acc, currentValue) => {
@@ -190,13 +191,14 @@ btnWinter.addEventListener('click', () => {
 const btnSortW = document.getElementById('btnSort');
 btnSortW.addEventListener('click', () => {
   const sportDiv = winterContent.querySelectorAll('.sportTitle');
-  console.log(sportDiv.textContent);
+  console.log(sportDiv);
   // console.log(winterContent.querySelectorAll('.sportTitle'));
 });
 
 btnSummer.addEventListener('click', () => {
   containerMain.classList.add('hideData');
   summerSecction.classList.remove('hideData');
+  winterSecction.classList.add('hideData');
   // DEPORTES FILTRADO POR TEMPORADA VERANO
   const temporada = filterAtletasForTemporada(arrDataAtletas, 'Summer');
   // console.log(temporada);
