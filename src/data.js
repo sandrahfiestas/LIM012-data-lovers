@@ -1,7 +1,4 @@
 import data from './data/atletas/atletas.js';
-// estas funciones son de ejemplo
-// export const example = () => 'example';
-// export const anotherExample = () => 'OMG';
 
 
 export const filterAtletasForYear = (arr, num) => {
@@ -19,7 +16,6 @@ export const filterAtletasForYear = (arr, num) => {
   return newArr;
 };
 
-
 export const displayAllData = (arry) => {
   const newArr = [];
   arry.forEach((element) => {
@@ -31,23 +27,5 @@ export const displayAllData = (arry) => {
   });
   return newArr;
 };
-
-// };
-
-
-// const topMedallistas = (arr, num) => {
-//   const medallistas = [];
-//   for (let i = 0; i < arr.length; i++) {
-//     if (Object.prototype.hasOwnProperty.call(arr[i], 'disciplinas')) {
-//       const arrayDisciplina = arr[i].disciplinas;
-//       for (let j = 0; j < arrayDisciplina.length; j++) {
-//         // const element = array[j];
-//         console.log(arrayDisciplina[j].medalla);
-//       }
-//     }
-//     // const element = arr[i];
-//   }
-// };
-// topMedallistas(data.atletas, 2016);
 
 export default data.js;

@@ -185,7 +185,6 @@ td{
     display: flex;
     justify-content: space-between;
 }
-/* tr:hover {background-color: #f5f5f5;} */
 
 .texEnd {
     display: flex;
@@ -254,9 +253,6 @@ h1{
 
 .tableProfile{
     /*border: 1px solid rgba(181,213,144,0.5);*/
-    
-   
-
 }
 
 .tableProfile th{
