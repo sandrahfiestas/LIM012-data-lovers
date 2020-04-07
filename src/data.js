@@ -24,6 +24,11 @@ export const filterAtletasForTemporada = (arr, temp) => {
         if (x.temporada === temp) {
           newArr.push(element.sport);
         }
+      });
+    }
+  });
+  return newArr;
+};
 
 
 export const displayAllData = (arry) => {
@@ -32,7 +37,6 @@ export const displayAllData = (arry) => {
     if (Object.prototype.hasOwnProperty.call(element, 'disciplinas')) {
       element.disciplinas.forEach((objeto) => {
         newArr.push(objeto);
-
       });
     }
   });
