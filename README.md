@@ -172,16 +172,20 @@ solución usando papel y lápiz. Te recomendamos tomar fotos de todas las
 iteraciones que hagas, que las subas a tu repositorio y las menciones en tu
 `README.md`.
 
-![Pagina principal prototipo de baja Fidelidad ultima version](/img/ImagenesREADME/paginaPrincipalVersionDos.jpeg)
-
 ![Pagina principal version uno prototipo de baja Fidelidad](https://github.com/paula113/LIM012-data-lovers/blob/experiment/src/img/ImagenesREADME/paginaPrincipalVersionUno.jpeg)
+figura 1
+
+![Pagina principal prototipo de baja Fidelidad ultima version](https://github.com/paula113/LIM012-data-lovers/blob/experiment/src/img/ImagenesREADME/paginaPrincipalVersionDos.jpeg)
+figura 2
 
 ![mostrar atletas prototipo de baja Fidelidad](https://github.com/paula113/LIM012-data-lovers/blob/experiment/src/img/ImagenesREADME/mostarAtletas.jpeg)
+figura 3
 
 ![mostrar atletas y deportes prototipo de baja Fidelidad](https://github.com/paula113/LIM012-data-lovers/blob/experiment/src/img/ImagenesREADME/MostrarAtletas%26deportes.jpeg)
+figura 4
 
 ![Filtar atletas por año prototipo de baja Fidelidad](https://github.com/paula113/LIM012-data-lovers/blob/experiment/src/img/ImagenesREADME/FiltrarPorA%C3%B1o.jpeg)
-
+figura 5
 #### Prototipo de alta fidelidad
 
 Lo siguiente es diseñar tu Interfaz de Usuario (UI por sus siglas en inglés -
@@ -211,6 +215,12 @@ Durante el reto deberás hacer _tests_ de usabilidad con distintos usuarios, y
 en base a los resultados, deberás iterar tus diseños. Cuéntanos
 qué problemas de usabilidad detectaste a través de los _tests_ y cómo los
 mejoraste en tu propuesta final.
+
+El prototipo de baja Fidelidad de la pagina principal version uno (figura 1) mostraba la seccion de medallas
+oro, plata y bonze. Las cuales, se mencionaba a los atletas con mas medallas acumuladas por typpo de medalla. Luego de implementar los test de usabilidad notamos que la mencionada seccion causaba confusion a los usuarios, es decir que la idea presentada no cumplia con las espectaciones del usuario. Esto nos llevo a replantear la idea dicha seccion, mostrando asi a los atletas en lugar de las medallas (figura 2).
+
+
+
 
 ### Implementación de la Interfaz de Usuario (HTML/CSS/JS)
 
