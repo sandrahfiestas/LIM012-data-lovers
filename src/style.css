@@ -131,7 +131,7 @@ header nav a:hover {
 
 #byName{
     /* background-color: blanchedalmond; */
-    text-align: center;
+    /* text-align: center; */
     width: 100%;
 }
 .appearance{
@@ -166,36 +166,35 @@ header nav a:hover {
     margin: auto;
     margin-bottom: 4%;
 }
-thead{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;;
-    width: 80%;
-}
+
 th{
     padding: 2%;
-
+    margin: auto;
+    width: 80%;
+}
+tr {
+    display: flex;
+    flex-direction: row;
+  
 }
 td{ 
     /* display: none; */
-    border-bottom: 1px solid rgb(189, 188, 188);
+    border-bottom: 1px solid rgb(153, 72, 72);
     padding: 2%;
-    width: 90%;
+    width: 50%;
     display: flex;
     justify-content: space-between;
 }
-td:hover {background-color: #f5f5f5;}
+/* tr:hover {background-color: #f5f5f5;} */
 
-/* .tableLeft{
-    display: inline;
-    margin-left: auto;
-    margin-right: 0;
+.texEnd {
+    display: flex;
+    justify-content: flex-end;
 }
 
-.tableTitleLeft{
-    padding-left: 35%;
-    padding-right: 0;
-} */
+.small {
+    width: 8%;
+}
 
 #myBtn{
     background: #D64045;
@@ -208,17 +207,6 @@ td:hover {background-color: #f5f5f5;}
     position: relative;
     width: max-content;
 
-}
-button {
-    cursor: pointer;
-    border: 1px inset rgb(0, 0, 0);
-    font-size: 13px;
-    color: #FFFFFF;
-    padding: 0.5em 1em;
-    font-family: 'Lora', serif;
-    background: #D64045;
-    box-sizing: border-box;
-    border-radius: 18px;
 }
 
 footer{
@@ -248,7 +236,8 @@ h1{
     color: #333;
 }
 
-div.table-container{
+
+/* div.table-container{
 
     background: #f2f2f2;
     width: 60%;
@@ -256,26 +245,37 @@ div.table-container{
     margin-right: auto;
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
     box-shadow: 0 0 0 10px #fff,
                 0 0 0 11px #fff,
                 0 20px 20px -12px #000;
 
+} */
+ 
+
+.tableProfile{
+    /*border: 1px solid rgba(181,213,144,0.5);*/
+    
+   
+
 }
 
-
-.table-profile{
-    border: 1px solid rgba(181,213,144,0.5);
-
-}
-
-.table-profile th{
-    /* color: rgb(41, 10, 10); */
-    /* font-weight: normal; */
+.tableProfile th{
+    padding: 0%;
     text-align: left;
+    width: 40%;
 }
 
-.table-detail{
+.tableProfile td{
+    text-align: left;
+    
+    padding: 0%;
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.tableDetail{
     font-size: .85em;
     border: 1px solid rgba(181,213,144,0.5);
     color: #666;
@@ -285,21 +285,20 @@ div.table-container{
     /* margin: auto; */
 }
 
-.table-detail td, .table-detail th{
+.tableDetail td, .tableDetail th{
     padding: .8em;
     border-bottom: 1px solid rgba(181, 213, 144, 0.5);
-}
-
-.table-detail th{
-    background: rgb(201, 80, 86);
-    color: #fff;
-    font-weight: normal;
-    text-align: right;
-}
-
-.table-detail td{
+    width: 100%;
     text-align: center;
+    
 }
+
+.tableDetail th{
+    background: #D64045;
+    color: #fff;
+    
+}
+
 
 @media (min-width: 360px) and (max-width: 768px) {
     body{
@@ -342,3 +341,115 @@ div.table-container{
       width: 23%;
     }
   } */
+
+  /* .olympiCelda {
+    cursor: pointer
+  } */
+
+  header nav a:hover {
+    background:#FFFFFF;
+    color: #D64045;
+}
+
+
+    div .olympiCelda:hover {
+        background-color: rgb(228, 224, 224);
+        cursor: pointer
+}
+
+  .foto {
+      height: 70px;
+  }
+
+.overlay {
+    background: rgba(0,0,0,.7);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.modalContainer {
+    background: #f6f6f6;
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.3);
+    border-radius: 15px;
+    width: 50%;
+    height: 70%;
+    padding: 10px solid #2C3E50; 
+    /* margin: 20px; */
+    display: flex;
+    /* flex-wrap: wrap; */
+    /* justify-content: center; */
+    flex-direction: column;
+}
+
+.modalContainer .closeModal {
+    cursor: pointer;
+    border: 1px inset rgb(0, 0, 0);
+    font-size: 10px;
+    width: 30px;
+    height: 25px;
+    color: #FFFFFF;
+    padding: 0.4em 1em;
+    font-family: 'Lora', serif;
+    background: #D64045;
+    box-sizing: border-box;
+    border-radius: 18px;
+}
+
+.modalContainer .closeModal:hover {
+    background: #000000;
+    color: #ffffff;
+}
+
+
+
+
+/* .elemento {
+    border-radius: 15px;
+    flex-grow: 1;
+    margin: 1px;
+    text-align: center;
+}
+
+.elemento1 {
+    height: 150px;
+}
+
+.elemento2 {
+    height: 150px;
+    text-align: left;
+    flex-shrink: 3;
+}
+
+.elemento2 p {
+    font-weight: bold;
+}
+
+.elemento3 {
+    height: 150px;
+    text-align: left;
+    flex-grow: 5;
+}
+
+.elemento4 {
+    height: 240px; 
+}
+*/
+
+.colorFondo1 {
+    background: #c2b8b8;
+    width: 100%;
+    height: 50%;
+}
+
+.colorFondo2 {
+    background: hsla(135, 68%, 41%, 0.884);
+    width: 100%;
+    height: 50%;
+}

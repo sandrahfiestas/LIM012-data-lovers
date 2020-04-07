@@ -1,5 +1,6 @@
 import {
   filterAtletasForYear,
+  displayAllData,
 } from './data.js';
 import data from './data/atletas/atletas.js';
 // import atletas from './data/atletas/atletas.js';
@@ -14,8 +15,6 @@ const btnByName = document.getElementById('btnByName');
 // const dVerMas = document.getElementById('dVerMas');
 // dVerMas.classList.remove('hideData');
 // const btnVerMas = document.getElementById('btnVerMas');
-const fichaAtleta = document.getElementById('table-container');
-const btnDeportes = document.getElementById('btnDeportes');
 const logoLeftClick = document.getElementById('logoLeftClick');
 const logoRightClick = document.getElementById('logoRightClick');
 const h1Click = document.getElementById('h1Click');
@@ -28,14 +27,36 @@ h1Element.classList.add('title');
 divElement.classList.add('counterAndList');
 h1Element.textContent = 'ATLETAS OLIMPICOS';
 const divTable = document.createElement('div');
+// Overlay
+const divTableContainer = document.createElement('div');
+divTableContainer.setAttribute('id', 'divTableContainer');
+divTableContainer.classList.add('hideData');
+// Modal
+const divFichaModal = document.createElement('div');
+divFichaModal.setAttribute('id', 'divFichaModal');
+divFichaModal.classList.add('modalContainer');
+// Botón cerrar
+const btnCloseModal = document.createElement('button');
+btnCloseModal.textContent = 'X';
+btnCloseModal.setAttribute('id', 'btnCloseModal');
+btnCloseModal.classList.add('closeModal');
+// Titulo
+const modalTitle = document.createElement('h1');
+modalTitle.textContent = 'INFORMACIÓN DE ATLETAS';
+// Div1 datos personales
+const divAll1 = document.createElement('div');
+divAll1.classList.add('colorFondo1');
+// Div2 datos disciplinas
+const divAll2 = document.createElement('div');
+divAll2.classList.add('colorFondo2');
 
 
 // BOTON DEL MENU "MIRA MAS ATLETAS"
 btnByName.addEventListener('click', () => {
   containerMain.classList.add('hideData');
-  fichaAtleta.classList.add('hideData');
   byName.classList.remove('hideData');
   // dVerMas.classList.remove('hideData');
+
   const filterAtletas2016 = filterAtletasForYear(arrDataAtletas, 2016);
   const myOrderedArray = filterAtletas2016.reduce((acc, currentValue) => {
     if (acc.indexOf(currentValue) === -1) {
@@ -46,19 +67,55 @@ btnByName.addEventListener('click', () => {
   let displayTemp2016 = '';
   for (let i = 0; i < myOrderedArray.length; i += 1) {
     const orden = i + 1;
-    displayTemp2016 += `<tr><td>${orden}  ${myOrderedArray[i].name}</td></tr>`;
+    displayTemp2016 += `<tr class="olympiCelda" id="value">  
+                          <td class="small">${orden}</td>
+                          <td class="">${myOrderedArray[i].name}</td>
+                          <td class="texEnd">${myOrderedArray[i].sport}</td>
+                        </tr>  
+                       `;
   }
   divTable.querySelector('#pintarData').innerHTML = displayTemp2016;
-  divElement.querySelector('#cuenta').innerHTML = ` Total de atletas ${myOrderedArray.length}`;
-  // divElement.querySelector('#year').value =
+  divElement.querySelector('#cuenta').innerHTML = `Total de atletas ${myOrderedArray.length}`;
+  // Selecciona celda y muestra datos personales
+  const celda = divTable.querySelectorAll('.olympiCelda');
+  for (let i = 0; i < celda.length; i += 1) {
+    celda[i].addEventListener('click', () => {
+      divTableContainer.classList.add('overlay');
+      divTableContainer.classList.remove('hideData');
+      divAll1.innerHTML = `
+                          <table id="" class="tableProfile">
+                           <tr><th>Nombre:</th><td>${myOrderedArray[i].name}</td></tr>
+                           <tr><th>Genero:</th><td>${myOrderedArray[i].gender}</td></tr>
+                           <tr><th>Altura:</th><td>${myOrderedArray[i].height}</td></tr>
+                           <tr><th>Peso:</th><td>${myOrderedArray[i].weight}</td></tr>
+                           <tr><th>Años</th><td>AÑOS</td></tr>
+                           <tr><th>Deporte</th><td>${myOrderedArray[i].sport}</td></tr>
+                           <tr><th>Equipo</th><td>${myOrderedArray[i].team}</td></tr>
+                          </table>
+                          `;
+
+      const displayDisciplina = displayAllData(myOrderedArray);
+      let displayDivAll2 = '';
+
+      displayDivAll2 += `<tr class="" id=""> 
+                            <td class="">${displayDisciplina[i].disciplina}</td>
+                            <td class="">${displayDisciplina[i].temporada}</td>
+                            <td class="">${displayDisciplina[i].año}</td>
+                            <td class="">${displayDisciplina[i].ciudad}</td>
+                            <td class="">${displayDisciplina[i].medalla}</td>
+                          </tr>  
+                         `;
+      divAll2.querySelector('#pintarAll2').innerHTML = displayDivAll2;
+    });
+  }
 });
 
-// BOTON DEPORTES MOSTAR FICHA DE ATLETA
-btnDeportes.addEventListener('click', () => {
-  containerMain.classList.add('hideData');
-  byName.classList.add('hideData');
-  fichaAtleta.classList.remove('hideData');
+// BOTON CERRAR MODAL
+btnCloseModal.addEventListener('click', () => {
+  divTableContainer.classList.remove('overlay');
+  divTableContainer.classList.add('hideData');
 });
+
 
 // BOTONES TITULO 'JUEGOS OLIMPICOS SIGLO XXI' Y LOGOS
 h1Click.addEventListener('click', () => {
@@ -86,10 +143,10 @@ btnVerMas.addEventListener('click', () => {
 // TABLA NOMBRES DE ATLETAS Y OLIMPIADAS
 const markupTable = `
 <table id="atletasTb" class="tableContent">
-    <thead>
-      <th>Nombre</th>
-      <th> Olimpiada</span></th>
-    </thead>
+  <thead>
+    <th>NOMBRE DE ATLETA</th>
+    <th>DEPORTE</th>
+  </thead>
     <tbody id="pintarData">
     </tbody>
 </table>
@@ -110,8 +167,23 @@ const select = `
   <p id="cuenta" class ="counter"</p>
 `;
 
+const fichaTable = `
+<table class="tableDetail">
+  <thead>
+    <th>Olimpiada</th>
+    <th>Disciplina</th>
+    <th>Temporada</th>
+    <th>Medallas</th>
+  </thead>
+    <tbody id="pintarAll2">
+    </tbody>
+</table>
+`;
+
 divElement.innerHTML = select;
 divTable.innerHTML = markupTable;
+divAll2.innerHTML = fichaTable;
+
 
 divElement.querySelector('#year').addEventListener('change', (event) => {
   const selectedYear = parseInt(event.target.value, 10);
@@ -128,10 +200,14 @@ divElement.querySelector('#year').addEventListener('change', (event) => {
   let stringTemplate = '';
   for (let i = 0; i < myOrderedArray.length; i += 1) {
     const orden = i + 1;
-    stringTemplate += `<tr><td>${orden}  ${myOrderedArray[i].name}</td></tr>`;
+    stringTemplate += `<tr id="value" class="olympiCelda">
+                        <td class="small">${orden}</td>
+                        <td>${myOrderedArray[i].name}</td>
+                        <td class="texEnd">${myOrderedArray[i].sport}</td>
+                      </tr>`;
   }
   divTable.querySelector('#pintarData').innerHTML = stringTemplate;
-  divElement.querySelector('#cuenta').innerHTML = ` Total de atletas ${myOrderedArray.length}`;
+  divElement.querySelector('#cuenta').innerHTML = `Total de atletas ${myOrderedArray.length}`;
 });
 
 
@@ -139,68 +215,12 @@ divElement.querySelector('#year').addEventListener('change', (event) => {
 document.getElementById('byName').appendChild(h1Element);
 document.getElementById('byName').appendChild(divElement);
 document.getElementById('byName').appendChild(divTable);
-
-
-/* NELIDA
-// practica filtra nombre y año con forEach (
-  data.atletas.forEach((atleta) => {
-    if (!atleta.disciplinas) {
-      console.dir(atleta);
-    }
-  });
-
-// practica filtra nombre y año con forEach (
-const list = (atleta) => {
-  atleta.forEach((element) => {
-    let elementos = '';
-    const name = element.name;
-  //  if (!element.disciplinas) {
-    element.disciplinas.forEach((objeto) => {
-      elementos = `<tr class=""><td>${name}
-        <span class="tableLeft">${objeto.ciudad}
-        ${objeto.año}</span></td></tr>`;
-    //   console.dir(objeto);
-      return elementos;
-    });
-   //  }
-  });
-};
-*/
-
-// Muestra los 5 primeros registros (HISTORIA 1)
-/*
-const atletasNames = (element, index) => {
-  let elementos = '';
-  if (index < 5) {
-    elementos = `<tr class=""><td>${element.name}
-      <span class="tableLeft">${element.disciplinas[0]['ciudad']}
-      ${element.disciplinas[0]['año']}</span></td></tr>`;
-  }
-  return elementos;
-};
-// ${data.atletas.map(atletasNames).join('')}
-*/
-
-// atletas.map((element, index, year) => {
-//   let elementos = '';
-//   if (index < 6000) {
-//     if (element.disciplinas[0]['año'] === year) {
-//       elementos = `<tr class=""><td>${element.name}
-//     <span class="tableLeft">${element.disciplinas[0]['ciudad']}
-//     ${element.disciplinas[0]['año']}</span></td></tr>`;
-//     }
-//   }
-//   return elementos;
-// }).join('');
-
-
-/*
-  // (PRACTICA) filter SF
-  const arrayDisciplinas = data.atletas.filter(arr => arr.hasOwnProperty('disciplinas'));
-  const array2016 = arrayDisciplinas.filter(year => year.disciplinas[0].año === 2016);
-  console.log(array2016);
-
-*/
+document.getElementById('byName').appendChild(divTableContainer);
+document.getElementById('divTableContainer').appendChild(divFichaModal);
+document.getElementById('divFichaModal').appendChild(btnCloseModal);
+document.getElementById('divFichaModal').appendChild(modalTitle);
+document.getElementById('divFichaModal').appendChild(divAll1);
+document.getElementById('divFichaModal').appendChild(divAll2);
 
 /*
   // USANDO JSON
